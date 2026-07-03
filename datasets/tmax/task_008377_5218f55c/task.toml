@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008377_5218f55c"
+description = "data analyst processing CSV files"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Time Series"
+primitive_skills = ["Large-scale sorting and grouping", "Wide-long format reshaping", "Feature extraction transforms", "Validation checkpoints and quality gates", "Interpolation and imputation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "data analyst processing CSV files"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008377_5218f55c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

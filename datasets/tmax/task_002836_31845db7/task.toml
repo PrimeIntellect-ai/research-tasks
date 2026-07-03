@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002836_31845db7"
+description = "open-source maintainer reviewing a broken PR"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Mathematical"
+primitive_skills = ["Cross-compilation and conditional builds", "Expression parsing and evaluation", "Memory debugging and profiling"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "open-source maintainer reviewing a broken PR"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002836_31845db7"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

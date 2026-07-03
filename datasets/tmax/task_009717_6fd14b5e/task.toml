@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009717_6fd14b5e"
+description = "capacity planner analyzing resource usage"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Network"
+primitive_skills = ["Firewall rules and port forwarding", "Process monitoring and control", "Robust script writing with error handling", "Text processing pipelines (awk, sed, grep)", "Expect scripting for interactive automation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "capacity planner analyzing resource usage"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009717_6fd14b5e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

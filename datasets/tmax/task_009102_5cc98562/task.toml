@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009102_5cc98562"
+description = "build engineer managing artifacts"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Algorithmic"
+primitive_skills = ["Structured data parsing and transformation", "WebSocket communication", "Performance benchmarking"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "build engineer managing artifacts"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009102_5cc98562"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

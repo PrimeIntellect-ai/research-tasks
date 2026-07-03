@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001162_eff22bd4"
+description = "engineer investigating a memory leak in a long-running service"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "debugging"
+skill_type = "Systems"
+primitive_skills = ["System call tracing", "Existing codebase comprehension and reading", "Build failure diagnosis"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "engineer investigating a memory leak in a long-running service"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001162_eff22bd4"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002306_8206f219"
+description = "capacity planner analyzing resource usage"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Filesystem"
+primitive_skills = ["Process monitoring and control", "User account and group administration", "Rolling and staged deployments", "Disk quota and storage monitoring", "Health check and monitoring setup"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "capacity planner analyzing resource usage"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002306_8206f219"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

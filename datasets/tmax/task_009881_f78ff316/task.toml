@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009881_f78ff316"
+description = "edge computing engineer deploying to IoT devices"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Process/Service"
+primitive_skills = ["Container lifecycle management", "Text processing pipelines (awk, sed, grep)", "Link and directory structure management", "Process monitoring and control", "Service lifecycle management (systemd, init)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "edge computing engineer deploying to IoT devices"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009881_f78ff316"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

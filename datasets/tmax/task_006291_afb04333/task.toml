@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006291_afb04333"
+description = "capacity planner analyzing resource usage"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Configuration"
+primitive_skills = ["Backup and restore strategies", "Robust script writing with error handling", "Rolling and staged deployments", "Service lifecycle management (systemd, init)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "capacity planner analyzing resource usage"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006291_afb04333"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

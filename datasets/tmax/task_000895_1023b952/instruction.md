@@ -1,0 +1,12 @@
+You are acting as a build engineer managing a security video artifact pipeline. We have a Go project located at `/home/user/artifact-builder` that uses CGO to wrap a C library (`libextractor.c`). This pipeline extracts hidden security events (watermarks) from surveillance video artifacts.
+
+Currently, the pipeline is entirely broken:
+1. **Package and dependency management:** The `go.mod` file is missing or corrupted, and the build script (`build.sh`) has incorrect linkage flags for the CGO integration. You need to initialize the Go module as `artifact-builder`, retrieve the necessary dependencies (like `github.com/stretchr/testify` for tests, if needed), and fix `build.sh` so `go build` successfully compiles the `extractor` binary.
+2. **C/C++ memory safety repair:** The C library `libextractor.c` has a memory safety issue (an off-by-one buffer overflow when reading frame headers). Identify and fix this undefined behavior so the library can process frames without segfaulting.
+3. **Video Processing (Integration):** Once the build is fixed, run the compiled `./extractor` binary on the video artifact located at `/app/security_feed.mp4`. The extractor will output a raw event file at `/home/user/raw_events.json` containing frame indices and raw byte streams.
+4. **Schema migration, sorting, and diffing:** The raw events are in Schema V1. You must write a new Go CLI program located at `/home/user/migrate/main.go` (compile it to `/home/user/migrate/run_migration`). This program must take a Schema V1 JSON file path as arg 1, and output a Schema V2 JSON file to stdout. 
+    - Schema V1 format: `[{"frame_id": int, "raw_data": "base64_string", "timestamp": float}]`
+    - Schema V2 format: `{"events": [{"id": "evt_<frame_id>", "decoded_hex": "hex_string", "ts_ms": int_milliseconds}], "total": int}`
+    - The output `events` array MUST be sorted by `ts_ms` in strictly ascending order. If two events have the same `ts_ms`, sort by `id` alphabetically.
+
+The `run_migration` tool will be strictly tested for equivalence against our proprietary oracle binary. Ensure your parsing, base64 to hex decoding, timestamp conversion (float seconds to integer milliseconds, truncated), sorting, and JSON formatting are perfectly deterministic.

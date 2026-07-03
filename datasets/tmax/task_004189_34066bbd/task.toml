@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004189_34066bbd"
+description = "build engineer managing artifacts"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Data Processing"
+primitive_skills = ["C program compilation, debugging, and Makefile repair", "CI/CD pipeline setup", "Memory debugging and profiling", "Expression parsing and evaluation", "Request validation and rate limiting"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "build engineer managing artifacts"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004189_34066bbd"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

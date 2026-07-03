@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002211_b4ce9314"
+description = "developer organizing project files"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "software_engineering"
+skill_type = "Systems"
+primitive_skills = ["CI/CD pipeline setup", "Package and dependency management", "Custom data structure design", "Numerical algorithm implementation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "developer organizing project files"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002211_b4ce9314"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

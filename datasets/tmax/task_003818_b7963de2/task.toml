@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003818_b7963de2"
+description = "operations engineer triaging incidents"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Algorithmic"
+primitive_skills = ["Core dump and stack trace analysis", "Build failure diagnosis", "Interactive debugger usage (breakpoints, memory inspection)", "Regression test construction", "Container debugging and log inspection"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "operations engineer triaging incidents"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003818_b7963de2"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

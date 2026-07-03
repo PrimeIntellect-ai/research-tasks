@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005389_47dd7a4e"
+description = "performance engineer profiling applications"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "scientific_computing"
+skill_type = "Testing"
+primitive_skills = ["Statistical hypothesis comparison", "Primer design and sequence alignment", "Scientific data format I/O (NetCDF, HDF5, FITS)", "Scientific software compilation from source", "Matrix decomposition (SVD, LU, QR, Cholesky)"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "performance engineer profiling applications"
+language = "any (model's choice)"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005389_47dd7a4e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

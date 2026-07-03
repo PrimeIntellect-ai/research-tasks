@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000493_a9ecf2b8"
+description = "researcher organizing datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Systems"
+primitive_skills = ["Dimensionality reduction", "Missing value and outlier handling", "Model output validation", "Bayesian inference and probabilistic modeling"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "researcher organizing datasets"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000493_a9ecf2b8"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

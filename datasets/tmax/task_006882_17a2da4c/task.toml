@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006882_17a2da4c"
+description = "log analyst investigating patterns"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Algorithmic"
+primitive_skills = ["Cleaning, normalization, and deduplication", "Structured information extraction from text", "Regex pattern construction", "Validation checkpoints and quality gates", "Pipeline logging and monitoring"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "log analyst investigating patterns"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006882_17a2da4c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

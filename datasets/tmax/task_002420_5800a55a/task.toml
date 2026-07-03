@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002420_5800a55a"
+description = "researcher running simulations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Statistical"
+primitive_skills = ["Numerical integration and differentiation", "Scientific software compilation from source", "Numerical stability testing", "Probability distribution distance metrics"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "researcher running simulations"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002420_5800a55a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

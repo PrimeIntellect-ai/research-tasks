@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003034_7c76dc05"
+description = "machine learning engineer preparing training data"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Mathematical"
+primitive_skills = ["Embedding computation and retrieval", "Sampling and bootstrap methods", "Model training and evaluation", "Analysis environment setup", "Correlation and covariance analysis"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "machine learning engineer preparing training data"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003034_7c76dc05"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

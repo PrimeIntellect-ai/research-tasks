@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001660_ce09478f"
+description = "machine learning engineer preparing training data"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Statistical"
+primitive_skills = ["Primer design and sequence alignment", "Matrix decomposition (SVD, LU, QR, Cholesky)", "Statistical hypothesis comparison", "Bioinformatics format parsing (FASTA, PDB)", "Scientific environment management"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "machine learning engineer preparing training data"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001660_ce09478f"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

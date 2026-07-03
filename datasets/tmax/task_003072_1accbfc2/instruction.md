@@ -1,0 +1,8 @@
+You are an integration developer tasked with testing and repairing a Reverse Polish Notation (RPN) calculator implementation. We have a reference implementation provided as a stripped binary, but our internal C implementation is currently broken and failing to build.
+
+Your tasks are:
+1. **Fix the Build System**: Navigate to `/home/user/src/`. You will find a broken `Makefile` and a C source file `rpn.c`. Fix the `Makefile` so that running `make` successfully compiles the C program into an executable named `rpn_calc` in the same directory.
+2. **Debug and Repair the C Program**: Fix the logic errors in `rpn.c`. The program must evaluate valid RPN expressions exactly like our reference oracle located at `/app/rpn_oracle`. Both programs accept a single argument (a string of space-separated tokens) and print the resulting integer to standard output. Example: `./rpn_calc "15 7 1 1 + - / 3 * 2 +" 5 *` (Note: operators are `+`, `-`, `*`, `/`. Division is standard integer division. Operands are valid 32-bit signed integers).
+3. **End-to-End Test Orchestration**: Write a Bash script at `/home/user/test.sh` that generates at least 5 random but valid RPN expressions, executes both `/home/user/src/rpn_calc` and `/app/rpn_oracle` with each expression, and compares their standard outputs. The script should print "PASS" if all outputs match, and "FAIL" otherwise. Ensure the script is executable.
+
+You must ensure that `/home/user/src/rpn_calc` behaves identically to `/app/rpn_oracle` for any valid RPN expression. An automated fuzzer will invoke your compiled `rpn_calc` with random valid RPN expressions to verify exact functional equivalence with the oracle.

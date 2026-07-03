@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005412_1a7d91ac"
+description = "data scientist fitting models"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Algorithmic"
+primitive_skills = ["Parallel computing setup (MPI, OpenMP)", "Observational data reshaping", "Graph algorithms for molecular/network models", "Bioinformatics format parsing (FASTA, PDB)"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "data scientist fitting models"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005412_1a7d91ac"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

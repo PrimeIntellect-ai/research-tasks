@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004677_12d8c701"
+description = "researcher organizing datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Data Comprehension"
+primitive_skills = ["Index strategy design", "Cross-representation mapping (relational, document, graph)", "Knowledge graph pattern matching", "Query result export and format conversion", "Complex joins and subqueries"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "researcher organizing datasets"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004677_12d8c701"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

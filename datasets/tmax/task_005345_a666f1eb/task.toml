@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005345_a666f1eb"
+description = "data scientist cleaning datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Testing"
+primitive_skills = ["Inference performance benchmarking", "Similarity search and recommendation", "Hypothesis testing and confidence intervals"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "data scientist cleaning datasets"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005345_a666f1eb"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,8 @@
+You are a mobile build engineer maintaining our CI/CD pipelines. We have a local Python webhook server at `/home/user/server.py` that receives build triggers from our CI system via HTTP POST requests on port 8080. 
+
+Currently, the webhook has a few issues and missing features that you need to address:
+1. **Character and Data Encoding**: The CI system sends a JSON payload with a `config` field containing a base64-encoded string. The underlying text is encoded in UTF-16LE, but the current script incorrectly assumes UTF-8, causing decoding crashes. Fix the script to properly decode the UTF-16LE text.
+2. **Request Validation & Rate Limiting**: The server lacks rate limiting. Implement an in-memory rate limiter that restricts each client IP address to a maximum of 3 requests per minute. Any subsequent requests within the same minute window from the same IP should immediately receive an HTTP 429 Too Many Requests response.
+3. **Build System Configuration**: The decoded UTF-16LE string will look like `target_app=MobileAppX`. The webhook must extract the target name and overwrite the file `/home/user/config.mk` with the line `TARGET := MobileAppX`.
+
+Please fix the Python script at `/home/user/server.py` to meet these requirements. Once you have fixed it, start the server in the background so it listens on `127.0.0.1:8080`, and then create a file `/home/user/status.txt` with the exact contents `DONE` to signal that you are finished.

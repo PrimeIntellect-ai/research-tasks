@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006781_c7f5ec7b"
+description = "machine learning engineer preparing training data"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Testing"
+primitive_skills = ["Correlation and covariance analysis", "Large-scale data storage management", "Package and dependency installation", "Analysis environment setup"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "machine learning engineer preparing training data"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006781_c7f5ec7b"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006704_467f8fac"
+description = "script developer creating utilities"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Algorithmic"
+primitive_skills = ["Assembly-level analysis and minimal program construction", "Package and dependency management", "Sorting, merging, and diffing", "Request validation and rate limiting"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "script developer creating utilities"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006704_467f8fac"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

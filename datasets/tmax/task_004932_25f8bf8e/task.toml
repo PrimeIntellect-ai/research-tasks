@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004932_25f8bf8e"
+description = "developer inheriting an unfamiliar codebase"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Algorithmic"
+primitive_skills = ["Race condition and concurrency debugging", "Interactive debugger usage (breakpoints, memory inspection)", "Git bisection for regression finding", "Convergence failure repair"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "developer inheriting an unfamiliar codebase"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004932_25f8bf8e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

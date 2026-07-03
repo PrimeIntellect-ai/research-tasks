@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006519_e9bd1a1f"
+description = "database reliability engineer managing backups"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Result Processing"
+primitive_skills = ["Graph traversal and shortest path computation", "Index strategy design", "Graph analytics (centrality, clustering)", "Result sorting, pagination, and filtering"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "database reliability engineer managing backups"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006519_e9bd1a1f"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

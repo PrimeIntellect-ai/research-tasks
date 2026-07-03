@@ -1,0 +1,10 @@
+You are investigating a custom Nginx-based application environment that is currently failing with a 502 Bad Gateway error. The application relies on a legacy compiled backend binary, but we need to replace it with a modern Python script while fixing the environment. You do not have root access, so all configurations are confined to your home directory.
+
+Your objectives:
+1. **Directory & Link Management:** The application expects its web root at `/home/user/www/html` and Nginx configurations at `/home/user/nginx/conf`. Create these directory structures. Create a symbolic link from `/home/user/nginx/conf/sites-available/app.conf` to `/home/user/nginx/conf/sites-enabled/app.conf`.
+2. **Backup & Config Management:** The current Nginx config file is located at `/home/user/nginx.conf.orig`. Create a backup of this file at `/home/user/backup/nginx.conf.bak`. Copy the original to `/home/user/nginx/conf/sites-available/app.conf` and fix the 502 Bad Gateway issue (the config currently points to port 8080, but our new backend will run on port 9090).
+3. **Mount Simulation:** Since you cannot use real `mount`, simulate a mount configuration by creating a file `/home/user/fake_fstab` containing an entry that would theoretically mount `/home/user/data.img` to `/home/user/www/html/data` using the `ext4` filesystem with `defaults` options. 
+4. **Expect Scripting:** Write an Expect script at `/home/user/test_backend.exp` that spawns the legacy backend, sends the string "PING", expects "PONG", and exits securely.
+5. **Reverse Engineering & Replacement:** The legacy backend binary is located at `/app/legacy_auth` (a stripped binary). It takes a single command-line argument (a session string) and outputs a specific token to stdout. You must reverse-engineer this binary and write a fully equivalent Python script at `/home/user/new_backend.py`. Your Python script must produce the exact same standard output as `/app/legacy_auth` for any given input string. 
+
+Ensure `/home/user/new_backend.py` is executable and accepts the input string as its first command-line argument (`sys.argv[1]`).

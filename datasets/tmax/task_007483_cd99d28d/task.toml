@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007483_cd99d28d"
+description = "engineer porting a Linux tool to work in a minimal container"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Data Processing"
+primitive_skills = ["State machine and parser construction", "Rust ownership and borrow checker debugging", "Shared library and ABI management", "Semantic version comparison", "REST/GraphQL API construction"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "engineer porting a Linux tool to work in a minimal container"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007483_cd99d28d"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

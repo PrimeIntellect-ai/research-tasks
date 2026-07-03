@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002159_bc7fe439"
+description = "data scientist fitting models"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "scientific_computing"
+skill_type = "Algorithmic"
+primitive_skills = ["Mesh refinement and domain decomposition", "Graph algorithms for molecular/network models", "Optimization (gradient descent, simplex, genetic)", "Scientific software compilation from source", "Spectroscopy and signal data processing"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "data scientist fitting models"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002159_bc7fe439"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

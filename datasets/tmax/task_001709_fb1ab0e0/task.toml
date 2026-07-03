@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001709_fb1ab0e0"
+description = "developer inheriting an unfamiliar codebase"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "debugging"
+skill_type = "Forensics"
+primitive_skills = ["Fuzz testing", "Data transformation diff analysis", "Existing codebase comprehension and reading"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "developer inheriting an unfamiliar codebase"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001709_fb1ab0e0"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

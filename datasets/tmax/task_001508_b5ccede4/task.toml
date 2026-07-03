@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001508_b5ccede4"
+description = "log analyst investigating patterns"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Time Series"
+primitive_skills = ["Pipeline DAG orchestration", "Resampling and gap-filling", "Constraint-based data validation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "log analyst investigating patterns"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001508_b5ccede4"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

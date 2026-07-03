@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004877_f6768c48"
+description = "compliance officer auditing systems"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Result Processing"
+primitive_skills = ["Recursive and hierarchical queries", "Query plan interpretation and optimization", "Window functions and analytical aggregation", "Schema analysis and relationship mapping"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "compliance officer auditing systems"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004877_f6768c48"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

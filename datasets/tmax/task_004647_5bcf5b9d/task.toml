@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004647_5bcf5b9d"
+description = "machine learning engineer preparing training data"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "scientific_computing"
+skill_type = "Mathematical"
+primitive_skills = ["Statistical hypothesis comparison", "Density estimation and distribution fitting", "Matrix decomposition (SVD, LU, QR, Cholesky)", "Scientific data format I/O (NetCDF, HDF5, FITS)", "Reproducible computation pipelines"]
+task_complexity = "intricate task (multi-stage workflow combining (a) environment setup or package configuration, (b) primary implementation across multiple files or languages, (c) iterative refinement against a quantitative or adversarial verifier, and (d) a final integration step. Expect 30-60 commands.)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "machine learning engineer preparing training data"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004647_5bcf5b9d"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

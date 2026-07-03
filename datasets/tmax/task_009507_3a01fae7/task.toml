@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009507_3a01fae7"
+description = "DevSecOps engineer enforcing policy as code"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Web Security"
+primitive_skills = ["Reverse engineering and disassembly", "Content security policy enforcement", "Process isolation and sandboxing", "Encryption and decryption", "Sensitive data redaction"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "DevSecOps engineer enforcing policy as code"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009507_3a01fae7"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

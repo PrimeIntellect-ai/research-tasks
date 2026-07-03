@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000042_c6feafa1"
+description = "platform engineer maintaining CI/CD pipelines"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "software_engineering"
+skill_type = "Web Security"
+primitive_skills = ["URL routing and parameter parsing", "Unit and integration testing", "Character and data encoding", "Expression parsing and evaluation", "Graph traversal and dependency resolution"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "platform engineer maintaining CI/CD pipelines"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000042_c6feafa1"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

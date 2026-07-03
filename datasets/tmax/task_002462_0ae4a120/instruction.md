@@ -1,0 +1,9 @@
+I need help setting up an automated system to organize and classify my research datasets based on their metadata features. I have an internal tool called `bayes_classifier-1.2.0` that uses Bayesian inference to score datasets based on their engineered features, but the vendored version we have in our environment is currently broken.
+
+Your task is to:
+1. Fix the vendored package `bayes_classifier-1.2.0` located at `/app/vendor/bayes_classifier`. The package is written in Bash and Python. There is a bug in the `Makefile` and the feature extraction script `extract_features.sh` that prevents it from correctly building and calculating the prior probabilities from the environment variables.
+2. Use the fixed package to process a raw dataset metadata file located at `/home/user/raw_datasets.csv`. You must engineer two new features: `time_since_creation` (in days from a fixed date: 2023-01-01) and `size_category` (categorical: 'small', 'medium', 'large' based on file size thresholds of 1MB and 100MB). Save the engineered dataset to `/home/user/engineered_datasets.csv`.
+3. Start a small HTTP API server using Python's `http.server` or a simple bash socket script that listens on `127.0.0.1:8080`.
+4. The server must have an endpoint `/score` that accepts POST requests with a JSON payload containing dataset metadata (matching the engineered features format). The server should pass this data to the `bayes_classifier` CLI tool, which returns a probability score, and then return this score in the HTTP response as `{"score": <float>}`. The server must require an Authorization header with a Bearer token: `secret-research-token`.
+
+Please start the server in the background and write a log file of its output to `/home/user/server.log`. Make sure the server remains running so my automated scripts can query it.

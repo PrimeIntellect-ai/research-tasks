@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000671_849773c0"
+description = "security researcher analysing a suspicious binary"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Debugging"
+primitive_skills = ["Git history forensics and secret recovery", "Floating-point precision repair", "Intermediate state tracing", "Database recovery from corrupted files (WAL, journal)", "Race condition and concurrency debugging"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "security researcher analysing a suspicious binary"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000671_849773c0"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

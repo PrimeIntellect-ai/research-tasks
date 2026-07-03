@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003306_6733e667"
+description = "on-call engineer responding to a 3am page"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Systems"
+primitive_skills = ["Deleted file recovery and filesystem inspection", "Assertion-based intermediate validation", "Format parsing edge-case repair", "Boundary condition and off-by-one repair"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "on-call engineer responding to a 3am page"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003306_6733e667"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

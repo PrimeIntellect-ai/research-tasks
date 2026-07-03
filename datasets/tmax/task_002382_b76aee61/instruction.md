@@ -1,0 +1,10 @@
+You have inherited a data-processing pipeline that parses large configuration files. The previous developer left the project in a broken state. Here is what we know:
+
+1. **Deleted Data**: The primary dataset `massive_data.yaml` was accidentally deleted from `/home/user/pipeline/`. However, the developer mentioned they had staged it in `git` before doing a hard reset. You must recover this file using git filesystem inspection techniques (it exists as a dangling blob in the `/home/user/pipeline/.git` directory). Restore it exactly as `massive_data.yaml` in `/home/user/pipeline/`.
+2. **Vendored Package Misconfiguration**: The parsing pipeline relies on a vendored version of PyYAML located at `/app/vendored/pyyaml-6.0.1`. The previous developer modified its setup to troubleshoot an issue, which silently broke the C-extension compilation. As a result, PyYAML is falling back to the pure-Python parser, which is far too slow. You need to diagnose and repair the build configuration in `/app/vendored/pyyaml-6.0.1`, reinstall the package into the current Python environment (e.g., using `pip install -e .`), and ensure the `CSafeLoader` is available and functioning.
+3. **Format Parsing Edge-Case**: The `massive_data.yaml` has a deeply nested anchor/alias structure that causes the default parser to hit recursion limits or take too long unless the C-extension is properly utilized.
+4. **Execution**: Once everything is fixed, run the provided benchmarking script:
+   `python /home/user/pipeline/run_benchmark.py /home/user/pipeline/massive_data.yaml`
+   This script will output a file `/home/user/pipeline/benchmark_results.json` containing the parsing execution time. 
+
+Your goal is to achieve an execution time metric of strictly less than `0.5` seconds. Ensure your fixes permanently resolve the underlying vendored package misconfiguration.

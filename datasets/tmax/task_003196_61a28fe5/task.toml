@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003196_61a28fe5"
+description = "localization engineer updating translations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Time Series"
+primitive_skills = ["Constraint-based data validation", "Normalization and standardization", "Joins, merges, and unions", "Validation checkpoints and quality gates", "Wide-long format reshaping"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "localization engineer updating translations"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003196_61a28fe5"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

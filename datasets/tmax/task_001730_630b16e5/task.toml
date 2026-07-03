@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001730_630b16e5"
+description = "technical writer organizing documentation"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Archives"
+primitive_skills = ["Binary format and header extraction", "Nested and multi-part archive handling", "Standard stream redirection and piping"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "technical writer organizing documentation"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001730_630b16e5"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

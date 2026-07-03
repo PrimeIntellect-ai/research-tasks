@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003899_3e4bce86"
+description = "researcher running simulations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Data Processing"
+primitive_skills = ["Numerical integration and differentiation", "Multi-dimensional array manipulation", "Convergence testing", "Mesh refinement and domain decomposition", "Parallel computing setup (MPI, OpenMP)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "researcher running simulations"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003899_3e4bce86"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,10 @@
+Hello, I need you to help me with a capacity planning task. We have a set of services running, but I am locked out of our local mock cluster due to some SSH misconfiguration, and I need to parse the usage logs to predict future resource needs.
+
+Here is what you need to do:
+1. Under `/home/user/.ssh/config`, there is an SSH configuration that is currently causing key-based logins to `localhost` to fail silently. Diagnose and fix the SSH configuration so that `ssh -q localhost echo OK` works without a password prompt. The private key is at `/home/user/.ssh/id_rsa`.
+2. I have an audio recording at `/app/capacity_request.wav` from our lead engineer specifying which service we need to analyze. Please transcribe this audio file (you can use `ffmpeg` or any available Python library to process it if needed, or assume it says "database-service" if you can't decode it, but you should try to decode it). The audio contains the name of the target service.
+3. Once SSH is fixed, use it to pull the latest rotated logs for the target service from `/var/log/services/<target_service>/`. You need to set up a quick log rotation config for `/var/log/services/<target_service>/usage.log` so it rotates daily, but that's just for future-proofing.
+4. Write a Bash script at `/home/user/analyze.sh` that reads the historical CPU usage percentages from the logs (format: `TIMESTAMP CPU_PERCENT MEM_PERCENT`) and calculates the linear trend to predict the CPU usage percentage for the next timestamp (timestamp 100).
+5. Run your script and save the single predicted floating-point value to `/home/user/prediction.txt`.
+
+Our test suite will verify your prediction against our exact linear regression model. Your predicted value must have a Mean Squared Error (MSE) of less than 1.0 compared to our reference value.

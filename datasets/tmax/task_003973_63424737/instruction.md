@@ -1,0 +1,11 @@
+You are tasked with recovering data using a proprietary, undocumented backup restoration tool and then serving the restored files securely. You are acting as a backup operator testing a restore drill.
+
+We have received a stripped executable `/app/restore_agent` and an encrypted backup archive `/app/backup.dat`. The documentation for the restoration tool has been lost, but we know the following about its behavior:
+
+1. **Environment Setup**: The binary requires a specific environment variable to be set in order to authorize the decryption. You will need to inspect the binary to determine the exact name of this environment variable and its expected value (which is hardcoded inside the binary for this test drill).
+2. **Health Check Daemon**: During the restoration process, the binary attempts to connect to a local health monitoring service via a TCP socket on `127.0.0.1:7777`. It will send a specific status payload and wait for a specific acknowledgment string before it writes the restored files. If the daemon is not running or replies incorrectly, the restoration fails. You must reverse-engineer the binary (using tools like `strings`, `strace`, `objdump`, or `gdb`) to determine the expected protocol exchange.
+3. **Execution**: Once the environment is configured and the TCP health daemon is running, execute the binary to restore the contents of `/app/backup.dat` into `/home/user/restored_data/`.
+4. **Integration and Serving**: The restored data will contain a file named `manifest.json`. Write a Python-based HTTP server listening on `0.0.0.0:8080` that serves the contents of `/home/user/restored_data/`. 
+5. **Security**: Your HTTP server must be secured using HTTP Basic Authentication. The username must be `backup_admin`, and the password must be the exact MD5 checksum (32 hex characters) of the restored `manifest.json` file.
+
+Please write the necessary Python scripts (e.g., `health_daemon.py` and `server.py`) and shell commands to complete this workflow. Leave the HTTP server running in the background so our verification system can issue HTTP requests to it. Create a log file at `/home/user/restore_drill.log` that contains the output of your health daemon.

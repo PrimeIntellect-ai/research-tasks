@@ -1,0 +1,9 @@
+We are experiencing severe memory exhaustion incidents in production with our internal asynchronous processing service. An operations engineer captured a network trace of the traffic that immediately preceded the latest crash, located at `/home/user/incident.pcap`.
+
+Your objectives are to diagnose and fix the root cause of this incident.
+
+1. **Environment Repair**: The source code for the service is vendored at `/app/vendored-async-svc-1.2.0`. Currently, trying to run `bash /app/vendored-async-svc-1.2.0/start.sh` fails due to a misconfiguration in the environment script. Identify and fix this misconfiguration so the server can start successfully on `127.0.0.1:8080`.
+2. **Pcap Analysis & Regression Test**: Analyze `/home/user/incident.pcap` to understand the specific client behavior triggering the issue. Once you understand the pattern, write a Python regression test at `/home/user/regression.py` that mimics this exact behavior against the local server to trigger the resource leak. The test should be executable via `python3 /home/user/regression.py`.
+3. **Concurrency Fix**: The service leaks `asyncio` tasks when subjected to the behavior seen in the pcap. Modify the source code in `/app/vendored-async-svc-1.2.0/server.py` to correctly handle this edge case. Tasks spawned for client requests must be properly cancelled and cleaned up when the condition occurs, preventing any race conditions or dangling tasks.
+
+When you are finished, leave the service running in the background. An automated verification script will run a high-volume load test mimicking the `incident.pcap` traffic and query the service's internal `/__stats__` endpoint to check for active background tasks. You must ensure that the number of leaked background tasks remains near zero.

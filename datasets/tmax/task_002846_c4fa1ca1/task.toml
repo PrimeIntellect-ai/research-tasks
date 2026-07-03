@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002846_c4fa1ca1"
+description = "site administrator managing user accounts"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Process/Service"
+primitive_skills = ["Service lifecycle management (systemd, init)", "Expect scripting for interactive automation", "Scheduled task configuration (cron, timers)", "Health check and monitoring setup"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "site administrator managing user accounts"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002846_c4fa1ca1"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

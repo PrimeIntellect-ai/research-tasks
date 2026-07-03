@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000259_9b13e0e3"
+description = "systems programmer debugging a C library linking issue"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "software_engineering"
+skill_type = "Mathematical"
+primitive_skills = ["Diff and patch processing", "Semantic version comparison", "Interpreter and emulator implementation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "systems programmer debugging a C library linking issue"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000259_9b13e0e3"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

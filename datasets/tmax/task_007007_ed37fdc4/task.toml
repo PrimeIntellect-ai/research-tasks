@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007007_ed37fdc4"
+description = "engineer setting up a polyglot build system from scratch"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Testing"
+primitive_skills = ["Character and data encoding", "Sorting, merging, and diffing", "FFI and cross-language interop (C bindings, ctypes, cgo)", "gRPC and protobuf service design"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "engineer setting up a polyglot build system from scratch"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007007_ed37fdc4"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

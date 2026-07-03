@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006307_024483c7"
+description = "network engineer troubleshooting connectivity"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Shell Scripting"
+primitive_skills = ["Backup and restore strategies", "Virtualization and VM management (QEMU, VNC)", "Mount and fstab configuration", "Expect scripting for interactive automation", "Process supervision and restart policies"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "network engineer troubleshooting connectivity"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006307_024483c7"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

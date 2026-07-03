@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002708_58c47d65"
+description = "integration developer testing APIs"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Mathematical"
+primitive_skills = ["Performance benchmarking", "Reverse proxy configuration", "FFI and cross-language interop (C bindings, ctypes, cgo)", "Memory debugging and profiling", "gRPC and protobuf service design"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "integration developer testing APIs"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002708_58c47d65"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

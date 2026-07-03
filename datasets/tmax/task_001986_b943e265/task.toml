@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001986_b943e265"
+description = "researcher organizing datasets"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_querying"
+skill_type = "Result Processing"
+primitive_skills = ["Window functions and analytical aggregation", "Complex joins and subqueries", "Knowledge graph pattern matching"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "researcher organizing datasets"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001986_b943e265"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

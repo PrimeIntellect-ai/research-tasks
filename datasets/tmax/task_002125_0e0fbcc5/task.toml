@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002125_0e0fbcc5"
+description = "performance engineer profiling applications"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Forensics"
+primitive_skills = ["Compiler and linker error interpretation", "Interactive debugger usage (breakpoints, memory inspection)", "Git history forensics and secret recovery"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "performance engineer profiling applications"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002125_0e0fbcc5"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

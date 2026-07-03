@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001554_228f3cb2"
+description = "log analyst investigating patterns"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Systems"
+primitive_skills = ["Timestamp alignment and parsing", "Large-file streaming", "Time-based bucketing and aggregation", "Data masking and anonymization", "Multi-format file reading and writing"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "log analyst investigating patterns"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001554_228f3cb2"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

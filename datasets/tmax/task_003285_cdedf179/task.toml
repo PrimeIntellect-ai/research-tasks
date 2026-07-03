@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003285_cdedf179"
+description = "localization engineer updating translations"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_processing"
+skill_type = "String/Text"
+primitive_skills = ["Interpolation and imputation", "Data sampling and stratification", "Joins, merges, and unions"]
+task_complexity = "intricate task (multi-stage workflow combining (a) environment setup or package configuration, (b) primary implementation across multiple files or languages, (c) iterative refinement against a quantitative or adversarial verifier, and (d) a final integration step. Expect 30-60 commands.)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "localization engineer updating translations"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003285_cdedf179"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

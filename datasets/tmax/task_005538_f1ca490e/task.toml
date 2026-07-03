@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005538_f1ca490e"
+description = "database reliability engineer managing backups"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Data Comprehension"
+primitive_skills = ["Recursive and hierarchical queries", "Window functions and analytical aggregation", "Output schema validation", "NoSQL aggregation pipelines", "Query-to-pipeline chaining"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "database reliability engineer managing backups"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005538_f1ca490e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000534_692babf2"
+description = "operations engineer triaging incidents"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "debugging"
+skill_type = "Debugging"
+primitive_skills = ["Floating-point precision repair", "Data transformation diff analysis", "Delta debugging and test minimization", "Convergence failure repair"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "operations engineer triaging incidents"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000534_692babf2"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

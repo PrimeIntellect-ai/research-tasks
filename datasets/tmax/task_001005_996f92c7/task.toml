@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001005_996f92c7"
+description = "platform engineer maintaining CI/CD pipelines"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Testing"
+primitive_skills = ["CI/CD pipeline setup", "Checksum and error-correcting codes", "Diff and patch processing", "Request validation and rate limiting"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "platform engineer maintaining CI/CD pipelines"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001005_996f92c7"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

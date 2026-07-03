@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004327_425e9281"
+description = "support engineer collecting diagnostics"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "debugging"
+skill_type = "Testing"
+primitive_skills = ["Intermediate state tracing", "Deleted file recovery and filesystem inspection", "Log timeline reconstruction across services", "Binary reverse engineering and decompilation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "support engineer collecting diagnostics"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004327_425e9281"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

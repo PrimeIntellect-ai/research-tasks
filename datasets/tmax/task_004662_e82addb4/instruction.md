@@ -1,0 +1,9 @@
+You are acting as an automated assistant for a compliance officer auditing an internal corporate system. 
+We have discovered an undocumented, stripped binary located at `/app/audit_oracle`. We suspect this binary implements a proprietary algorithm to detect compliance violations by mapping relational HR records, document-based access logs, and graph-based communication metadata to find illicit insider trading patterns.
+
+Your task has three parts:
+1. Reverse engineer or treat the stripped binary `/app/audit_oracle` as a black-box to understand the input format it expects and the compliance rules it enforces. The binary reads from standard input and outputs a JSON array of flagged employee IDs.
+2. Based on your understanding, write a robust data querying pipeline that takes raw data (provided in `/data/hr.db` for relational data, `/data/access_logs.json` for document data, and `/data/comm_graph.csv` for graph data) and extracts the exact same flagged employee IDs as the binary would if fed the raw data in its required format.
+3. Create a unified network service that exposes your querying pipeline. The service must listen on `0.0.0.0:8080` for HTTP POST requests at `/api/audit`. The POST request will contain an authentication header `Authorization: Bearer COMPLIANCE_AUDIT_77x` and a JSON body with new, unseen data paths. Your service must return a JSON array of flagged employee IDs with an HTTP 200 OK status. 
+
+Ensure your service is robust and handles the complex joins and cross-representation mapping efficiently. Start the service in the background and write a log file to `/home/user/service_ready.log` containing the string "SERVICE STARTED" when it is ready to accept requests.

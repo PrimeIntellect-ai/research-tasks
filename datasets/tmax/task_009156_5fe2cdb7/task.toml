@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009156_5fe2cdb7"
+description = "web developer building a feature"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Mathematical"
+primitive_skills = ["Polyglot build orchestration (multiple compiled languages)", "Property-based testing", "Semantic version comparison", "Custom data structure design", "Character and data encoding"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "web developer building a feature"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009156_5fe2cdb7"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

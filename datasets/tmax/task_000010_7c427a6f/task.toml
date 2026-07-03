@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000010_7c427a6f"
+description = "DevOps engineer debugging logs"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Forensics"
+primitive_skills = ["Assertion-based intermediate validation", "Corrupted input handling and recovery", "Loop termination and recursion fixing"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "DevOps engineer debugging logs"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000010_7c427a6f"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

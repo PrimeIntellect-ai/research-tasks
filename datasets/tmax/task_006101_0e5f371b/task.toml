@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006101_0e5f371b"
+description = "operations engineer triaging incidents"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Algorithmic"
+primitive_skills = ["System call tracing", "Query result debugging", "Encoding and serialization troubleshooting", "Precision loss tracking", "Numerical instability diagnosis"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "operations engineer triaging incidents"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006101_0e5f371b"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

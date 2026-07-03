@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002098_919047a8"
+description = "performance engineer profiling applications"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Systems"
+primitive_skills = ["Numerical instability diagnosis", "Query result debugging", "Race condition and concurrency debugging", "Assertion-based intermediate validation", "Formula implementation correction"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "performance engineer profiling applications"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002098_919047a8"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

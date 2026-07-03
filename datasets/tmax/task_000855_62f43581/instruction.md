@@ -1,0 +1,10 @@
+You are a data analyst tasked with finishing an A/B test analysis pipeline. Your predecessor wrote a script to compute the Bayesian posterior distributions of conversion rates for two website variants (A and B), but left the company before finishing it.
+
+There are a few problems you need to solve:
+1. **Dependencies:** The environment is missing the necessary Python packages. You will need to install them.
+2. **Tabular Data Aggregation:** The script `/home/user/analyze.py` is incomplete. It loads `/home/user/ab_test_data.csv` but has a hardcoded fallback instead of actually aggregating the total conversions and total trials per variant. You must fix the code to group the data by variant and correctly calculate `successes` (sum of 'converted') and `trials` (count of rows) for Variants A and B.
+3. **Blank Plot Bug:** The script attempts to generate a plot of the posterior distributions and save it to `/home/user/posterior_plot.png`. However, due to a misconfiguration with matplotlib in our headless terminal environment (and an issue with the order of matplotlib commands), it is saving a completely blank image. Fix the script so it generates and saves a valid, non-blank plot.
+4. **Bayesian Inference:** The script has a `TODO` to calculate the probability that Variant B is better than Variant A (i.e., the conversion rate of B > conversion rate of A). Complete this using Monte Carlo sampling. Draw exactly `1,000,000` samples from the posterior Beta distribution of each variant. Use `np.random.seed(42)` immediately before generating the samples to ensure reproducibility.
+5. **Output:** Write the calculated probability, rounded to exactly 4 decimal places (e.g., `0.8521`), to a new file at `/home/user/prob_B_better.txt`.
+
+Ensure your final script runs without errors, produces a valid plot image, and writes the correct probability to the text file. You are free to run the script and inspect the outputs to verify your work.

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004869_89b817f7"
+description = "network engineer inspecting traffic"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Algorithmic"
+primitive_skills = ["Content security policy enforcement", "TLS/SSL certificate management", "Process isolation and sandboxing", "Cryptographic hashing and checksum verification"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "network engineer inspecting traffic"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004869_89b817f7"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

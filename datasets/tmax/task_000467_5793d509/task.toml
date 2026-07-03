@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000467_5793d509"
+description = "support engineer collecting diagnostics"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Algorithmic"
+primitive_skills = ["Git history forensics and secret recovery", "Precision loss tracking", "Boundary condition and off-by-one repair", "Formula implementation correction", "Encoding and serialization troubleshooting"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "support engineer collecting diagnostics"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000467_5793d509"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

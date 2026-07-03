@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004482_b5f275a4"
+description = "data analyst processing CSV files"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_querying"
+skill_type = "Graph Processing"
+primitive_skills = ["Query-to-pipeline chaining", "Graph query languages (SPARQL, Cypher)", "Graph projection and materialization"]
+task_complexity = "intricate task (multi-stage workflow combining (a) environment setup or package configuration, (b) primary implementation across multiple files or languages, (c) iterative refinement against a quantitative or adversarial verifier, and (d) a final integration step. Expect 30-60 commands.)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "data analyst processing CSV files"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004482_b5f275a4"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

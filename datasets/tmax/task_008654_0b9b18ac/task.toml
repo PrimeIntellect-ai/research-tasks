@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008654_0b9b18ac"
+description = "machine learning engineer preparing training data"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Statistical"
+primitive_skills = ["Experimental data visualization", "Spectroscopy and signal data processing", "ODE/PDE numerical solving", "Optimization (gradient descent, simplex, genetic)", "Bioinformatics format parsing (FASTA, PDB)"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "machine learning engineer preparing training data"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008654_0b9b18ac"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

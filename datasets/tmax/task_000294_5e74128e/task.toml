@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000294_5e74128e"
+description = "technical writer organizing documentation"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Archives"
+primitive_skills = ["Multi-line log record parsing", "Configuration file interpretation", "Nested and multi-part archive handling", "Streaming and memory-mapped I/O", "Domain-specific format parsing (GCode, ELF, WAL)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "technical writer organizing documentation"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000294_5e74128e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

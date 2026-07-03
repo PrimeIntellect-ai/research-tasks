@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001384_67260e54"
+description = "mobile build engineer maintaining pipelines"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "software_engineering"
+skill_type = "Web Security"
+primitive_skills = ["C/C++ memory safety and undefined behaviour repair", "Rust ownership and borrow checker debugging", "Graph traversal and dependency resolution", "Code translation between languages", "URL routing and parameter parsing"]
+task_complexity = "intricate task (multi-stage workflow combining (a) environment setup or package configuration, (b) primary implementation across multiple files or languages, (c) iterative refinement against a quantitative or adversarial verifier, and (d) a final integration step. Expect 30-60 commands.)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "mobile build engineer maintaining pipelines"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001384_67260e54"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

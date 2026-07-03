@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009975_60205c2e"
+description = "data scientist cleaning datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Algorithmic"
+primitive_skills = ["Analysis environment setup", "Hypothesis testing and confidence intervals", "Embedding computation and retrieval", "Large-scale data storage management", "Similarity search and recommendation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "data scientist cleaning datasets"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009975_60205c2e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

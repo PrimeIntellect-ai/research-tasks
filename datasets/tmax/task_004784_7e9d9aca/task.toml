@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004784_7e9d9aca"
+description = "developer organizing project files"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Data Parsing"
+primitive_skills = ["Character encoding conversion", "Domain-specific format parsing (GCode, ELF, WAL)", "File splitting, merging, and chunking", "Custom compression and decompression", "Format conversion between file types"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "developer organizing project files"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004784_7e9d9aca"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

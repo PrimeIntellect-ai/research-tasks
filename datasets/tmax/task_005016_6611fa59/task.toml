@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005016_6611fa59"
+description = "configuration manager tracking changes"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_processing"
+skill_type = "Systems"
+primitive_skills = ["Multi-format file reading and writing", "Interpolation and imputation", "Large-file streaming", "Anomaly and changepoint detection", "Joins, merges, and unions"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "configuration manager tracking changes"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005016_6611fa59"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

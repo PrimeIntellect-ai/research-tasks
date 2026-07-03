@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007820_5d98cd5b"
+description = "systems programmer debugging a C library linking issue"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Mathematical"
+primitive_skills = ["Expression parsing and evaluation", "WebSocket communication", "CI/CD pipeline setup", "Unit and integration testing", "Polyglot build orchestration (multiple compiled languages)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "systems programmer debugging a C library linking issue"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007820_5d98cd5b"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

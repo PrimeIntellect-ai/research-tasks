@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009677_2b79022d"
+description = "engineer diagnosing why a systemd service fails to start"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Network"
+primitive_skills = ["Permission and ACL management", "Expect scripting for interactive automation", "SSH tunneling and port forwarding", "Virtualization and VM management (QEMU, VNC)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "engineer diagnosing why a systemd service fails to start"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009677_2b79022d"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,9 @@
+You are acting as a Site Reliability Engineer (SRE). We have an old, legacy monitoring tool that calculates our service uptime, but it recently broke after a server crash. We need you to restore its functionality, fix the underlying issues, and improve its performance.
+
+The system is set up in `/home/user/monitor_env`. Here is the current situation:
+1. The primary monitoring binary is located at `/app/uptime_monitor` (it is a stripped binary without debug symbols). When executed, it currently fails to run due to a library loading error. It relies on a shared library `libuptime_calc.so`. There are multiple versions of this library in `/home/user/monitor_env/libs`, and the environment is picking up the wrong one due to a dependency conflict.
+2. Even if you resolve the linker issue, the binary will fail because its required configuration file (`/home/user/monitor_env/config/settings.bin`) was accidentally deleted. However, we have a raw dump of the partition it was on at `/home/user/monitor_env/disk_image.img`. You must inspect this filesystem image, recover the deleted file, and place it back in the `config` directory.
+3. Once the binary is running, we have a bigger problem: it is too slow to handle our new polling frequency. You must write a C program wrapper at `/home/user/monitor_env/fast_wrapper.c` that executes `/app/uptime_monitor` but caches the result for 5 seconds. If called again within 5 seconds, it should return the cached uptime value instead of executing the binary again.
+4. Finally, write a bash script `/home/user/monitor_env/regression_test.sh` that validates your wrapper works, utilizing assertions to ensure that consecutive calls within 5 seconds yield identical results and execute in less time.
+
+Compile your wrapper to `/home/user/monitor_env/fast_wrapper`. The final wrapper must speed up a burst of 100 requests by at least a factor of 50x compared to calling the binary 100 times directly.

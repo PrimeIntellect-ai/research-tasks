@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005120_01b0aeec"
+description = "developer inheriting an unfamiliar codebase"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Mathematical"
+primitive_skills = ["Git history forensics and secret recovery", "Convergence failure repair", "Environment misconfiguration repair", "Build failure diagnosis", "Assertion-based intermediate validation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "developer inheriting an unfamiliar codebase"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005120_01b0aeec"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

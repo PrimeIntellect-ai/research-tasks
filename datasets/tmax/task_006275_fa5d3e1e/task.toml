@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006275_fa5d3e1e"
+description = "MLOps engineer tracking experiment artifacts"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Systems"
+primitive_skills = ["Tabular data transformation and aggregation", "Linear algebra for data analysis", "Hypothesis testing and confidence intervals", "ETL pipeline construction", "Analysis environment setup"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "MLOps engineer tracking experiment artifacts"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006275_fa5d3e1e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

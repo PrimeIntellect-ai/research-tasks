@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002999_f7a7fdaf"
+description = "admin fixing an nginx config that returns 502 bad gateway"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Configuration"
+primitive_skills = ["Task automation scripting", "Git server and hook configuration", "Firewall rules and port forwarding", "Expect scripting for interactive automation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "admin fixing an nginx config that returns 502 bad gateway"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002999_f7a7fdaf"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

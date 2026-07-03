@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008319_4e37b5f6"
+description = "performance engineer profiling applications"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Testing"
+primitive_skills = ["Intermediate state tracing", "Network packet capture analysis (pcap)", "Assertion-based intermediate validation", "Numerical instability diagnosis", "Intermittent failure reproduction"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "performance engineer profiling applications"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008319_4e37b5f6"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

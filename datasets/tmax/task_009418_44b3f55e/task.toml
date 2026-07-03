@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009418_44b3f55e"
+description = "IT support technician resolving tickets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Systems"
+primitive_skills = ["Race condition and concurrency debugging", "Format parsing edge-case repair", "Build failure diagnosis", "Corrupted input handling and recovery", "Environment misconfiguration repair"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "IT support technician resolving tickets"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009418_44b3f55e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

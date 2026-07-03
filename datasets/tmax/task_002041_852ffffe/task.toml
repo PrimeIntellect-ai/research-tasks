@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002041_852ffffe"
+description = "linux systems engineer hardening configurations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Filesystem"
+primitive_skills = ["Robust script writing with error handling", "Disk quota and storage monitoring", "Rolling and staged deployments", "Container lifecycle management"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "linux systems engineer hardening configurations"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002041_852ffffe"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

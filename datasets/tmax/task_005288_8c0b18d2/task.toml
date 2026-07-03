@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005288_8c0b18d2"
+description = "storage administrator managing disk space"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "file_operations"
+skill_type = "Navigation"
+primitive_skills = ["Custom compression and decompression", "Large-scale text editing and macro application", "Configuration file interpretation", "Domain-specific format parsing (GCode, ELF, WAL)", "Character encoding conversion"]
+task_complexity = "intricate task (multi-stage workflow combining (a) environment setup or package configuration, (b) primary implementation across multiple files or languages, (c) iterative refinement against a quantitative or adversarial verifier, and (d) a final integration step. Expect 30-60 commands.)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "storage administrator managing disk space"
+language = "any (model's choice)"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005288_8c0b18d2"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

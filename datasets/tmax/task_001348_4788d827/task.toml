@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001348_4788d827"
+description = "database administrator optimizing queries"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_querying"
+skill_type = "Graph Processing"
+primitive_skills = ["Graph query languages (SPARQL, Cypher)", "Schema analysis and relationship mapping", "Recursive and hierarchical queries", "Cross-representation mapping (relational, document, graph)", "Complex joins and subqueries"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "database administrator optimizing queries"
+language = "any (model's choice)"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001348_4788d827"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

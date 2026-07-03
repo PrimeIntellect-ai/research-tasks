@@ -1,0 +1,10 @@
+A legacy Python build pipeline is failing during its validation and deployment phases, and we need you to debug and repair it. You are acting as a developer resolving these build failures.
+
+There are three main issues preventing the build from completing and the service from deploying:
+1. **Memory Dump Extraction**: The build script requires a configuration token originally lost when our old build server crashed. We managed to salvage a raw memory dump at `/app/memdump.raw`. You must extract a 14-character alphanumeric string starting with `MEM_SEC_` from this dump and provide it to the script.
+2. **Convergence Failure**: The core algorithm inside `/home/user/build/processor.py` performs an iterative optimization on image matrices. It currently fails to converge during the build tests due to an off-by-one boundary condition in the iteration loop. You need to debug this loop and fix the boundary logic so the assertions pass.
+3. **Image Fixture Validation**: The build test suite expects to assert the result against a reference image located at `/app/reference.png`. You must use Tesseract (OCR) to extract the embedded text from this image and insert it as the expected string in the assertion block inside `/home/user/build/test_processor.py`.
+
+Once the tests pass, you must start the deployment phase by running `/home/user/build/deploy.py`. This will launch an HTTP service. Ensure the service successfully binds and listens on `0.0.0.0:8080`. The service has an endpoint `/health` that should return `{"status": "running", "token": "<extracted_memory_token>"}`.
+
+Write your final extracted memory token to `/home/user/build_token.txt` and leave the HTTP service running in the background. Do not alter the overarching build architecture; only repair the boundary loops, fix the assertions with the OCR data, and ensure the service runs.

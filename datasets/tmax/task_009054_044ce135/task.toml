@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009054_044ce135"
+description = "script developer creating utilities"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Multi-Language"
+primitive_skills = ["URL routing and parameter parsing", "Semantic version comparison", "Structured data parsing and transformation", "Request validation and rate limiting"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "script developer creating utilities"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009054_044ce135"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

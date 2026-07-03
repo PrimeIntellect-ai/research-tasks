@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006856_a420cedd"
+description = "developer organizing project files"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Archives"
+primitive_skills = ["Domain-specific format parsing (GCode, ELF, WAL)", "Incremental and differential backups", "Standard stream redirection and piping", "Large-scale text editing and macro application", "Nested and multi-part archive handling"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "developer organizing project files"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006856_a420cedd"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

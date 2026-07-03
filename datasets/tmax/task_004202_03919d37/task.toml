@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004202_03919d37"
+description = "monitoring specialist setting up alerts"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Shell Scripting"
+primitive_skills = ["Permission and ACL management", "Locale and timezone configuration", "Process supervision and restart policies", "Email and mailing list server configuration", "Idempotent configuration scripting"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "monitoring specialist setting up alerts"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004202_03919d37"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

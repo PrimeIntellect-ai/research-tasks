@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005661_b29558c9"
+description = "platform engineer maintaining CI/CD pipelines"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Data Processing"
+primitive_skills = ["FFI and cross-language interop (C bindings, ctypes, cgo)", "URL routing and parameter parsing", "Rust ownership and borrow checker debugging", "Expression parsing and evaluation", "C program compilation, debugging, and Makefile repair"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "platform engineer maintaining CI/CD pipelines"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005661_b29558c9"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

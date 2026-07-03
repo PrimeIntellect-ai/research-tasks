@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002392_c7a06198"
+description = "developer fixing a multi-file Rust project that fails to compile"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "software_engineering"
+skill_type = "Web Security"
+primitive_skills = ["Assembly-level analysis and minimal program construction", "Character and data encoding", "URL routing and parameter parsing", "Shared library and ABI management", "Checksum and error-correcting codes"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "developer fixing a multi-file Rust project that fails to compile"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002392_c7a06198"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

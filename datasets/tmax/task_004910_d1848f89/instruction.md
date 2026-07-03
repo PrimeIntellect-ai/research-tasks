@@ -1,0 +1,9 @@
+You are a container specialist tasked with implementing a local microservice routing topology. A previous engineer left behind an architecture diagram in an image file located at `/app/network_topology.png`, but no configuration files.
+
+Your objectives are:
+1. **Extract Topology Data**: Analyze `/app/network_topology.png` (using OCR tools like `tesseract`, which is installed) to find the required port forwarding chain. The image contains text describing three microservice layers: "GatewayPort: <port1>", "AppPort: <port2>", and "DataPort: <port3>".
+2. **Implement User-Level Port Forwarding**: Since you do not have root access for `iptables`, use `socat` to create a port forwarding chain. Traffic arriving at `GatewayPort` should be forwarded to `AppPort`, and traffic arriving at `AppPort` should be forwarded to `DataPort`. Keep these `socat` processes running in the background.
+3. **Simulate the Data Service**: Write a simple TCP server or HTTP server listening on `DataPort` that responds to any incoming request with the exact string "DATA_ACK". Run this in the background.
+4. **Scheduled Connectivity Diagnostics**: Create a shell script at `/home/user/check_connectivity.sh` that sends a simple payload to `GatewayPort` and waits for the "DATA_ACK" response. If it receives "DATA_ACK", it should append "STATUS: OK" to `/home/user/monitor.log`. Configure a user-level `cron` job to run this script every minute.
+
+Ensure all services (`socat` forwarders and the Data service) are actively running in the background when you finish. The automated evaluation will test your configuration by sending payloads to your `GatewayPort` and calculating a routing success metric.

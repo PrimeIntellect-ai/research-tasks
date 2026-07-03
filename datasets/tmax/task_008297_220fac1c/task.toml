@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008297_220fac1c"
+description = "infrastructure engineer automating provisioning"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Deployment"
+primitive_skills = ["Robust script writing with error handling", "Environment variable and shell profile setup", "Disk quota and storage monitoring", "Text processing pipelines (awk, sed, grep)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "infrastructure engineer automating provisioning"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008297_220fac1c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

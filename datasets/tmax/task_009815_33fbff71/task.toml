@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009815_33fbff71"
+description = "configuration manager tracking changes"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Algorithmic"
+primitive_skills = ["Cleaning, normalization, and deduplication", "Data masking and anonymization", "Normalization and standardization", "Multi-stage pipeline orchestration"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "configuration manager tracking changes"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009815_33fbff71"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

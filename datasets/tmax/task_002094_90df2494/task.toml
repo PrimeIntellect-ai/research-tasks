@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002094_90df2494"
+description = "researcher running simulations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Algorithmic"
+primitive_skills = ["Scientific code regression testing", "Observational data reshaping", "Graph algorithms for molecular/network models", "Multi-dimensional array manipulation", "Bootstrap confidence intervals"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "researcher running simulations"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002094_90df2494"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008480_5101a650"
+description = "platform engineer maintaining CI/CD pipelines"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Data Processing"
+primitive_skills = ["End-to-end test orchestration", "Request validation and rate limiting", "Unit and integration testing"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "platform engineer maintaining CI/CD pipelines"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008480_5101a650"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

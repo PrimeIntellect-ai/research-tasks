@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001379_e8ff1857"
+description = "security engineer rotating credentials"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "security"
+skill_type = "Web Security"
+primitive_skills = ["Authentication flow testing", "Encryption and decryption", "Service auditing and port scanning", "Cryptographic hashing and checksum verification"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "security engineer rotating credentials"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001379_e8ff1857"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

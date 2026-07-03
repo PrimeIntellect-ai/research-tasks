@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004156_713fed65"
+description = "open-source maintainer reviewing a broken PR"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "software_engineering"
+skill_type = "Web Security"
+primitive_skills = ["Code translation between languages", "Memory debugging and profiling", "Unit and integration testing", "Constraint satisfaction", "Cross-compilation and conditional builds"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "open-source maintainer reviewing a broken PR"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004156_713fed65"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

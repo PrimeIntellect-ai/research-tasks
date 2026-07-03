@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005158_1208f52c"
+description = "data scientist fitting models"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Algorithmic"
+primitive_skills = ["Observational data reshaping", "Analytical solution validation", "Spectroscopy and signal data processing", "Notebook-based workflow orchestration", "Curve fitting and regression"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "data scientist fitting models"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005158_1208f52c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

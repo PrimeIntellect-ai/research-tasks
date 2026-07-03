@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006981_7c3c9624"
+description = "linux systems engineer hardening configurations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Deployment"
+primitive_skills = ["Scheduled task configuration (cron, timers)", "Git server and hook configuration", "Robust script writing with error handling", "SSH tunneling and port forwarding"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "linux systems engineer hardening configurations"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006981_7c3c9624"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

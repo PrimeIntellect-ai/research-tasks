@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001990_1b29ea51"
+description = "developer fixing a multi-file Rust project that fails to compile"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "software_engineering"
+skill_type = "Testing"
+primitive_skills = ["Unit and integration testing", "Character and data encoding", "Property-based testing", "C program compilation, debugging, and Makefile repair"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "developer fixing a multi-file Rust project that fails to compile"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001990_1b29ea51"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

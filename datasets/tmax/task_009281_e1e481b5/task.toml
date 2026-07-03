@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009281_e1e481b5"
+description = "compliance analyst generating audit trails"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Algorithmic"
+primitive_skills = ["Payload encoding and decoding", "Content security policy enforcement", "Pattern matching for intrusion detection", "Privilege escalation auditing"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "compliance analyst generating audit trails"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009281_e1e481b5"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009911_6f100fcb"
+description = "log analyst investigating patterns"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Manipulation"
+primitive_skills = ["Data masking and anonymization", "Data sampling and stratification", "Structured information extraction from text", "Windowed and rolling aggregation", "Anomaly and changepoint detection"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "log analyst investigating patterns"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009911_6f100fcb"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

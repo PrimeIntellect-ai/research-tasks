@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000657_8a6da3d4"
+description = "DevOps engineer debugging logs"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Systems"
+primitive_skills = ["Database recovery from corrupted files (WAL, journal)", "Environment misconfiguration repair", "Build failure diagnosis", "Intermittent failure reproduction", "Core dump and stack trace analysis"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "DevOps engineer debugging logs"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000657_8a6da3d4"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

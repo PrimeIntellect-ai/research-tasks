@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000221_0d2825d8"
+description = "mobile build engineer maintaining pipelines"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Systems"
+primitive_skills = ["Polyglot build orchestration (multiple compiled languages)", "REST/GraphQL API construction", "C/C++ memory safety and undefined behaviour repair", "Custom data structure design"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "mobile build engineer maintaining pipelines"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000221_0d2825d8"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

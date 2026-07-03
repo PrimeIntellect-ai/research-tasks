@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003617_34de18c4"
+description = "performance engineer profiling applications"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Data Processing"
+primitive_skills = ["Reference dataset comparison", "Scientific environment management", "Density estimation and distribution fitting", "Multi-dimensional array manipulation", "Scientific data format I/O (NetCDF, HDF5, FITS)"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "performance engineer profiling applications"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003617_34de18c4"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

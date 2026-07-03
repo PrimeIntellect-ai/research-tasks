@@ -1,0 +1,12 @@
+You are tasked with fixing and integrating a high-performance string processing microservice. The system consists of two parts: a Go-based API gateway that handles request validation and rate limiting using goroutines and channels, and a C++ backend service that performs a proprietary cryptographic transformation.
+
+Currently, the system is broken in three ways:
+1. **Linking Error:** The C++ backend located at `/home/user/app/backend` fails to compile. The `Makefile` has a linking error related to a shared library (`libcrypto_custom.so`). You must debug the `Makefile` and fix the linking issue so that `make` successfully produces the `backend_server` executable.
+2. **Algorithmic Implementation:** The core processing logic in `/home/user/app/backend/algo.cpp` is incomplete. You need to implement the `transform_string(const std::string& input)` function. You are provided with a reference stripped binary at `/opt/oracle/backend_server_oracle`. Your compiled C++ implementation must produce bit-exact equivalent output to this oracle for any given string input. You can test the oracle by running `/opt/oracle/backend_server_oracle --cli <input>`.
+3. **Service Integration:** The Go gateway located at `/home/user/app/gateway` is configured to proxy requests to the backend, but its configuration file (`/home/user/app/gateway/config.json`) has the wrong backend port, and its rate-limiting logic is dropping valid requests. Fix the port configuration to point to the C++ backend (which runs on port `9090`), and adjust the `config.json` rate limit threshold from `0` to `100` requests per second.
+
+Once you have fixed the Makefile, implemented the algorithm to match the oracle, and corrected the configuration, start both services. The Go gateway should be started via `go run main.go` in its directory and will listen on port `8080`. The C++ backend should be started by running `./backend_server` in its directory.
+
+An automated test suite will verify your solution by:
+- Randomly fuzzing your C++ backend against the oracle with thousands of inputs to ensure exact behavioral equivalence.
+- Sending traffic through the Go gateway on port `8080` to verify that request validation, rate limiting, and proxying to the C++ backend are functioning correctly.

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000278_b29e9198"
+description = "artifact manager curating binary repositories"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "File I/O"
+primitive_skills = ["File watching and change detection", "Manifest and checksum generation", "Atomic writes and temp file management"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "artifact manager curating binary repositories"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000278_b29e9198"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

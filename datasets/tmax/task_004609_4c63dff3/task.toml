@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004609_4c63dff3"
+description = "forensics analyst recovering evidence from a compromised host"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Data Processing"
+primitive_skills = ["Reverse engineering and disassembly", "Authentication flow testing", "Content security policy enforcement"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "forensics analyst recovering evidence from a compromised host"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004609_4c63dff3"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

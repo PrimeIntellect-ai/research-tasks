@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002428_00796251"
+description = "technical writer organizing documentation"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "file_operations"
+skill_type = "Navigation"
+primitive_skills = ["Archive creation and extraction", "Text transformation with sed/awk/vim", "Large-scale text editing and macro application", "Text and binary file reading/writing", "Incremental and differential backups"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "technical writer organizing documentation"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002428_00796251"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

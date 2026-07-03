@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006396_654d1711"
+description = "kubernetes operator managing manifests"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Deployment"
+primitive_skills = ["Interactive script construction", "Git server and hook configuration", "Mount and fstab configuration"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "kubernetes operator managing manifests"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006396_654d1711"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

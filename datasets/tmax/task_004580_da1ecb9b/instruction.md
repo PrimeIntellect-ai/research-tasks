@@ -1,0 +1,10 @@
+You are an automated configuration manager responsible for tracking server metric changes. A field engineer has dictated a series of CPU load measurements over a noisy audio connection. Your task is to build a data processing pipeline that transcribes the audio, normalizes the extracted data, computes mathematical aggregations, and sets up a scheduled job for future ingestion.
+
+**Instructions:**
+1. **Audio Transcription & Tokenization**: An audio file is located at `/app/metrics_dictation.wav`. Transcribe this file using any suitable tool you can install in your environment (e.g., `openai-whisper` and `ffmpeg` are standard choices). The audio contains a sequence of spoken measurements (e.g., "Measurement one: forty five...").
+2. **Data Normalization**: Extract the numerical values from the transcription. Convert any spelled-out numbers into digits.
+3. **Windowed Aggregation**: Calculate a rolling average of the extracted CPU load metrics with a window size of 3. (For the first element, the average is just the element itself; for the second, it is the average of the first two; from the third onwards, it is the average of the current and two preceding elements). Round all rolling averages to 2 decimal places.
+4. **Validation Checkpoint**: Save your final results in a CSV file at `/home/user/rolling_averages.csv` with the exact headers: `Index,Value,RollingAvg`. The `Index` should start at 1.
+5. **Pipeline Scheduling**: Package your data processing logic into a bash or multi-language script at `/home/user/process_metrics.sh`. Then, create a cron schedule file at `/home/user/metrics_pipeline.cron` configured to run `/home/user/process_metrics.sh` every 15 minutes.
+
+Your output will be evaluated automatically by comparing your computed `RollingAvg` sequence against the true mathematical rolling averages of the original dictated sequence. You must achieve a Mean Squared Error (MSE) below a strict threshold.

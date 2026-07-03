@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005068_5c9db082"
+description = "performance engineer profiling applications"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Mathematical"
+primitive_skills = ["MCMC sampling and posterior estimation", "Numerical stability testing", "Bioinformatics format parsing (FASTA, PDB)", "Monte Carlo simulation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "performance engineer profiling applications"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005068_5c9db082"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

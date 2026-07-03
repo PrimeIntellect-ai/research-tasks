@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004596_24ce55ce"
+description = "site administrator managing user accounts"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "system_administration"
+skill_type = "Deployment"
+primitive_skills = ["Connectivity diagnostics", "Reverse proxy and load balancer setup", "Link and directory structure management", "Scheduled task configuration (cron, timers)"]
+task_complexity = "intricate task (multi-stage workflow combining (a) environment setup or package configuration, (b) primary implementation across multiple files or languages, (c) iterative refinement against a quantitative or adversarial verifier, and (d) a final integration step. Expect 30-60 commands.)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "site administrator managing user accounts"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004596_24ce55ce"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

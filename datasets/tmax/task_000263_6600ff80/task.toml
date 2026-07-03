@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000263_6600ff80"
+description = "edge computing engineer deploying to IoT devices"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Deployment"
+primitive_skills = ["Task automation scripting", "Firewall rules and port forwarding", "Permission and ACL management", "Expect scripting for interactive automation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "edge computing engineer deploying to IoT devices"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000263_6600ff80"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004675_402f2345"
+description = "data scientist fitting models"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "scientific_computing"
+skill_type = "Systems"
+primitive_skills = ["Probability distribution distance metrics", "Spectroscopy and signal data processing", "Primer design and sequence alignment", "Scientific code regression testing", "Parallel computing setup (MPI, OpenMP)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "data scientist fitting models"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004675_402f2345"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

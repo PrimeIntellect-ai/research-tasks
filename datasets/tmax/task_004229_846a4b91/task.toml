@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004229_846a4b91"
+description = "researcher running simulations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Systems"
+primitive_skills = ["Scientific data format I/O (NetCDF, HDF5, FITS)", "Statistical hypothesis comparison", "Linear and nonlinear equation solving", "Fourier transforms and spectral analysis", "Parallel computing setup (MPI, OpenMP)"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "researcher running simulations"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004229_846a4b91"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

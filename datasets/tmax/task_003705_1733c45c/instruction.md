@@ -1,0 +1,9 @@
+You are tasked with building a high-performance C++ data processing pipeline to analyze sensor readings. You have been provided a large CSV file of sensor data and an image containing critical configuration parameters.
+
+Your task consists of the following steps:
+1. Extract Configuration: Read the image file located at `/app/sensor_config.png` using an OCR tool (e.g., `tesseract`). It contains two key parameters: "BucketSize" (in seconds) and "ZThreshold".
+2. Data Reshaping & Bucketing: The input data is at `/app/sensor_data.csv` in wide format (`timestamp, sensor_0, sensor_1, ..., sensor_99`). Write a C++ program that reads this file in parallel (multithreading is required for performance), reshapes it into a long format (`timestamp, sensor_id, value`), and groups the readings into time buckets of size `BucketSize`.
+3. Anomaly Detection: Within each bucket, for each sensor, calculate the mean and standard deviation of the values. Flag any value as an anomaly if its absolute difference from the mean is strictly greater than `ZThreshold * standard_deviation`.
+4. Output: Write the aggregated results to `/home/user/anomalies.csv`. The CSV must have the header `bucket_start_time,sensor_id,anomaly_count` and list the number of anomalies found for each sensor in each bucket. Do not output rows where `anomaly_count` is 0. Sort the final output numerically by `bucket_start_time` ascending, then by `sensor_id` (e.g., "sensor_0") alphabetically.
+
+Ensure your C++ code is compiled with optimizations (e.g., `-O3`). You may use standard C++ libraries. The automated evaluation will check the F1 score of your anomaly detection against the ground truth.

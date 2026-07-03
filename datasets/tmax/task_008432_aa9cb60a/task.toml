@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008432_aa9cb60a"
+description = "linux systems engineer hardening configurations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Network"
+primitive_skills = ["Log configuration and rotation", "Firewall rules and port forwarding", "Web server setup and TLS configuration", "Container lifecycle management", "Link and directory structure management"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "linux systems engineer hardening configurations"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008432_aa9cb60a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

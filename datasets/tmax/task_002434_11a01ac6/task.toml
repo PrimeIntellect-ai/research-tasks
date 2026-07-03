@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002434_11a01ac6"
+description = "script developer creating utilities"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Web Security"
+primitive_skills = ["State machine and parser construction", "Character and data encoding", "Rust ownership and borrow checker debugging", "Expression parsing and evaluation", "WebSocket communication"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "script developer creating utilities"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002434_11a01ac6"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

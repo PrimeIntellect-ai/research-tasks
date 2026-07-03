@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009864_af88c05d"
+description = "web developer building a feature"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Algorithmic"
+primitive_skills = ["Code translation between languages", "C/C++ memory safety and undefined behaviour repair", "Request validation and rate limiting"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "web developer building a feature"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009864_af88c05d"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

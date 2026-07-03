@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006612_69235f4f"
+description = "compliance officer auditing systems"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Data Comprehension"
+primitive_skills = ["Window functions and analytical aggregation", "Query result export and format conversion", "Cross-query aggregation and summarization", "Cross-representation mapping (relational, document, graph)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "compliance officer auditing systems"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006612_69235f4f"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

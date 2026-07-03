@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003095_67c65c2d"
+description = "configuration manager tracking changes"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Data Parsing"
+primitive_skills = ["Bulk file renaming", "Atomic writes and temp file management", "Text transformation with sed/awk/vim", "Format conversion between file types", "File splitting, merging, and chunking"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "configuration manager tracking changes"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003095_67c65c2d"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

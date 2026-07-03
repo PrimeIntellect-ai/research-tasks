@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005500_b4d7bf04"
+description = "researcher organizing datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Navigation"
+primitive_skills = ["Symbolic and hard link management", "File watching and change detection", "Domain-specific format parsing (GCode, ELF, WAL)", "Atomic writes and temp file management", "Custom compression and decompression"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "researcher organizing datasets"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005500_b4d7bf04"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

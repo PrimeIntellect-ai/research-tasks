@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007863_d9d301ff"
+description = "engineer investigating a memory leak in a long-running service"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Mathematical"
+primitive_skills = ["Regression test construction", "Intermediate state tracing", "Logging and traceback analysis", "Formula implementation correction"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "engineer investigating a memory leak in a long-running service"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007863_d9d301ff"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

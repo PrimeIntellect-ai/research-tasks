@@ -1,0 +1,13 @@
+You are tasked with fixing a critical circular dependency linking issue and optimizing a mathematical component for a hybrid Rust/C systems project.
+
+Currently, our hybrid project located at `/home/user/project` is failing to compile due to a circular linking setup. The Rust application (`src/main.rs`) calls a C mathematical library (`clib/math_core.c`), which in turn attempts to call back into a Rust logging system (`src/logger.rs`). Because of how the build scripts and static libraries are currently configured, this results in undefined reference errors at link time.
+
+Furthermore, we recently received a bug report with an attached screenshot of a stack trace (`/app/crash_trace.png`). Within this image, a specific maximum iteration limit (`MAX_ITERATIONS=...`) is visible. The current C implementation of our core function, `compute_matrix_power`, performs linear iterative matrix multiplication (O(N)), which is vastly too slow for the iteration limit shown in the image.
+
+Your objectives:
+1. **Extract Data:** Use OCR (e.g., Tesseract) to read `/app/crash_trace.png` and find the exact integer value for `MAX_ITERATIONS`.
+2. **Fix Linkage:** Resolve the circular linking issue between the C library and the Rust application. You will likely need to adjust `build.rs` to correctly compile the C code, expose the Rust logger via FFI (`extern "C"`), and ensure the final executable builds successfully without undefined symbols.
+3. **Translation & Optimization:** The C function `compute_matrix_power` in `clib/math_core.c` computes the N-th power of a 2x2 matrix modulo 9973. Translate this mathematical bottleneck entirely into Rust. Implement binary exponentiation (O(log N)) to achieve a dramatic performance speedup. Ensure the new Rust function replaces the old C implementation.
+4. **Integration:** Update `src/main.rs` to run the optimized Rust matrix power function using the `MAX_ITERATIONS` value extracted from the image. The program should output exactly: `Result: [A, B, C, D]` where A, B, C, D are the elements of the resulting matrix.
+
+Build the final executable in release mode at `/home/user/project/target/release/matrix_solver`. An automated Python benchmark suite will run your compiled binary against our reference C implementation. Your Rust translation must produce the correct mathematical result and achieve a runtime speedup of at least 20.0x compared to the naive linear C implementation.

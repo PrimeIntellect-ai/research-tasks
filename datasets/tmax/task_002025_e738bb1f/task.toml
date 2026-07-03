@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002025_e738bb1f"
+description = "network engineer inspecting traffic"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Testing"
+primitive_skills = ["Automated vulnerability scanning", "Exploit crafting and payload delivery", "SSH hardening and key management", "Password cracking and brute-force search", "File integrity verification"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "network engineer inspecting traffic"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002025_e738bb1f"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

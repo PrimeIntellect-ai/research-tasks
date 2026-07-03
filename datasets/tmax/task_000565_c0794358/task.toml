@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000565_c0794358"
+description = "localization engineer updating translations"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_processing"
+skill_type = "Manipulation"
+primitive_skills = ["Unicode and multi-language text processing", "Multi-stage pipeline orchestration", "Local-remote data transfer", "Character encoding handling", "Parallel data processing"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "localization engineer updating translations"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000565_c0794358"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

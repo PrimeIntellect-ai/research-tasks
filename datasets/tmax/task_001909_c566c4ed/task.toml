@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001909_c566c4ed"
+description = "localization engineer updating translations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Manipulation"
+primitive_skills = ["Resampling and gap-filling", "Time-based bucketing and aggregation", "Timestamp alignment and parsing"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "localization engineer updating translations"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001909_c566c4ed"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

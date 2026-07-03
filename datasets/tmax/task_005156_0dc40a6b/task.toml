@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005156_0dc40a6b"
+description = "log analyst investigating patterns"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Algorithmic"
+primitive_skills = ["Hash-based deduplication", "Resampling and gap-filling", "Character encoding handling", "Cleaning, normalization, and deduplication"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "log analyst investigating patterns"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005156_0dc40a6b"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

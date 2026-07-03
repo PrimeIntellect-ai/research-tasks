@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000176_2b846a1b"
+description = "FinOps analyst optimizing cloud costs"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Deployment"
+primitive_skills = ["Process supervision and restart policies", "Git server and hook configuration", "Robust script writing with error handling", "Reverse proxy and load balancer setup", "Link and directory structure management"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "FinOps analyst optimizing cloud costs"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000176_2b846a1b"
+cpus = 1
+memory_mb = 2048
+allow_internet = true
