@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008186_724ed636"
+description = "engineer investigating a memory leak in a long-running service"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Testing"
+primitive_skills = ["Compiler and linker error interpretation", "Statistical anomaly investigation", "Core dump and stack trace analysis", "Corrupted input handling and recovery", "Existing codebase comprehension and reading"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "engineer investigating a memory leak in a long-running service"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008186_724ed636"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

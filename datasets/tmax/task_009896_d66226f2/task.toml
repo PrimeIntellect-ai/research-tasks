@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009896_d66226f2"
+description = "artifact manager curating binary repositories"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Archives"
+primitive_skills = ["Metadata-based file search", "Text and binary file reading/writing", "Binary format and header extraction", "Bulk file renaming", "Character encoding conversion"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "artifact manager curating binary repositories"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009896_d66226f2"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

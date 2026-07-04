@@ -1,0 +1,9 @@
+You have just inherited a mathematical modeling project from a former colleague. The codebase is located in `/home/user/solver_repo`. It is a Python script designed to find the specific root of a parameterized cubic function using the Newton-Raphson method, but it is currently broken on multiple levels.
+
+Your objectives:
+1. **Fix the Environment**: The project cannot currently be installed or run due to a misconfiguration in the dependency specification. Identify and fix the issue, then install the dependencies in your environment.
+2. **Recover Missing Configuration**: The script requires a specific calibration constant to evaluate the function correctly. The previous developer removed it from the code and mandated it be passed as an environment variable (`CALIB_CONST`), but didn't document the value. Use Git history forensics to find the exact historical value of this constant that was previously hardcoded.
+3. **Repair the Convergence Failure**: Even with the correct dependencies and constant, the script fails to converge. The current initial guess causes the Newton-Raphson implementation to oscillate endlessly (similar to an unhandled edge-case panic). Debug the mathematical behavior, fix the convergence issue in `solver.py` (e.g., by changing the initial guess to a more appropriate negative float like `-2.0`, or by adding a fallback), and ensure the internal assertions pass.
+4. **Log the Output**: Once the script runs successfully and passes its internal assertions, run it and write the final calculated root to `/home/user/solution.txt`, rounded to exactly 6 decimal places (e.g., `-1.123456`).
+
+Do not change the underlying mathematical function, only the logic/parameters needed to achieve convergence.

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003001_970335b5"
+description = "monitoring specialist setting up alerts"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Shell Scripting"
+primitive_skills = ["Web server setup and TLS configuration", "Scheduled task configuration (cron, timers)", "Task automation scripting"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "monitoring specialist setting up alerts"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003001_970335b5"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

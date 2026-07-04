@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003574_45f1649a"
+description = "engineer porting a Linux tool to work in a minimal container"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Algorithmic"
+primitive_skills = ["Unit and integration testing", "End-to-end test orchestration", "REST/GraphQL API construction"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "engineer porting a Linux tool to work in a minimal container"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003574_45f1649a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

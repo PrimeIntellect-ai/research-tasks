@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009769_ded1fe1e"
+description = "data analyst processing CSV files"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Result Processing"
+primitive_skills = ["Graph analytics (centrality, clustering)", "Complex joins and subqueries", "Index strategy design", "Knowledge graph pattern matching"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "data analyst processing CSV files"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009769_ded1fe1e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008986_27518c2a"
+description = "data scientist cleaning datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Systems"
+primitive_skills = ["Normalization and standardization", "Validation checkpoints and quality gates", "Timestamp alignment and parsing", "Distance and similarity computation", "Structured information extraction from text"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "data scientist cleaning datasets"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008986_27518c2a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003454_9bd7ebec"
+description = "site reliability engineer monitoring uptime"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Forensics"
+primitive_skills = ["Intermediate state tracing", "Build failure diagnosis", "Core dump and stack trace analysis", "Existing codebase comprehension and reading"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "site reliability engineer monitoring uptime"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003454_9bd7ebec"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

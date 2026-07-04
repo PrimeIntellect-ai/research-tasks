@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003113_c160cd79"
+description = "security researcher analysing a suspicious binary"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Debugging"
+primitive_skills = ["Corrupted input handling and recovery", "Query result debugging", "Precision loss tracking"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "security researcher analysing a suspicious binary"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003113_c160cd79"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

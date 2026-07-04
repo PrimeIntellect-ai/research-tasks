@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007458_25a2622c"
+description = "automation specialist creating workflows"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Mathematical"
+primitive_skills = ["Wide-long format reshaping", "Multi-format file reading and writing", "Time-based bucketing and aggregation", "Feature extraction transforms", "Pipeline scheduling and cron management"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "automation specialist creating workflows"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007458_25a2622c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

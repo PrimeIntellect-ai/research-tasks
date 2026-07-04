@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008116_5be67e8d"
+description = "infrastructure engineer automating provisioning"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Filesystem"
+primitive_skills = ["Git server and hook configuration", "Log configuration and rotation", "Locale and timezone configuration", "Process monitoring and control"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "infrastructure engineer automating provisioning"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008116_5be67e8d"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

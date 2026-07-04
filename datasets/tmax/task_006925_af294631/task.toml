@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006925_af294631"
+description = "site reliability engineer monitoring uptime"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Configuration"
+primitive_skills = ["Process supervision and restart policies", "Link and directory structure management", "Virtualization and VM management (QEMU, VNC)"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "site reliability engineer monitoring uptime"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006925_af294631"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

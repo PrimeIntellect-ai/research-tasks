@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004285_6d77abb6"
+description = "release manager preparing deployments"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Web Security"
+primitive_skills = ["Test fixture and mock setup", "Diff and patch processing", "Rust ownership and borrow checker debugging", "CI/CD pipeline setup"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "release manager preparing deployments"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004285_6d77abb6"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000687_63e8810c"
+description = "data analyst processing CSV files"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_processing"
+skill_type = "Manipulation"
+primitive_skills = ["Summary statistics and aggregation", "Multi-stage pipeline orchestration", "Hash-based deduplication", "Local-remote data transfer", "Structured information extraction from text"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "data analyst processing CSV files"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000687_63e8810c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

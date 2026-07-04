@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002440_24ec647d"
+description = "data analyst processing CSV files"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_querying"
+skill_type = "Data Comprehension"
+primitive_skills = ["Query result export and format conversion", "Complex joins and subqueries", "Graph traversal and shortest path computation", "Index strategy design", "Output schema validation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "data analyst processing CSV files"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002440_24ec647d"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

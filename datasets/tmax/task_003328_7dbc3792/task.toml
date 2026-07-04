@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003328_7dbc3792"
+description = "developer migrating from Python 2 to Python 3"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Data Processing"
+primitive_skills = ["Sorting, merging, and diffing", "Graph traversal and dependency resolution", "End-to-end test orchestration"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "developer migrating from Python 2 to Python 3"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003328_7dbc3792"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

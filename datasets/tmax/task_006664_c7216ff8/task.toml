@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006664_c7216ff8"
+description = "developer fixing a multi-file Rust project that fails to compile"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Testing"
+primitive_skills = ["Schema migration", "C/C++ memory safety and undefined behaviour repair", "Character and data encoding", "Test fixture and mock setup", "Build system configuration and linking"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "developer fixing a multi-file Rust project that fails to compile"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006664_c7216ff8"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

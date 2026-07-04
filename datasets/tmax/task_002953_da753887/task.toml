@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002953_da753887"
+description = "release manager preparing deployments"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Multi-Language"
+primitive_skills = ["gRPC and protobuf service design", "Diff and patch processing", "State machine and parser construction", "Package and dependency management", "Semantic version comparison"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "release manager preparing deployments"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002953_da753887"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

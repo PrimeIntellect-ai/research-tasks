@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001574_396b6962"
+description = "security engineer rotating credentials"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Algorithmic"
+primitive_skills = ["HTTP header and cookie inspection", "Binary format and ELF analysis", "File integrity verification", "Automated vulnerability scanning", "CWE identification and code auditing"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "security engineer rotating credentials"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001574_396b6962"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

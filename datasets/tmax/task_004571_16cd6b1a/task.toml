@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004571_16cd6b1a"
+description = "release manager preparing deployments"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "software_engineering"
+skill_type = "Systems"
+primitive_skills = ["Property-based testing", "End-to-end test orchestration", "Custom data structure design", "C/C++ memory safety and undefined behaviour repair"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "release manager preparing deployments"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004571_16cd6b1a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002362_da142d28"
+description = "researcher organizing datasets"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_querying"
+skill_type = "Graph Processing"
+primitive_skills = ["Result sorting, pagination, and filtering", "Cross-representation mapping (relational, document, graph)", "Complex joins and subqueries", "Query plan interpretation and optimization"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "researcher organizing datasets"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002362_da142d28"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

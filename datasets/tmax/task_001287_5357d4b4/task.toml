@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001287_5357d4b4"
+description = "artifact manager curating binary repositories"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "file_operations"
+skill_type = "Archives"
+primitive_skills = ["Text transformation with sed/awk/vim", "File locking and concurrent access", "Compressed stream processing", "Custom compression and decompression", "File watching and change detection"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "artifact manager curating binary repositories"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001287_5357d4b4"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

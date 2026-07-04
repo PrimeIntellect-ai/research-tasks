@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000789_3d479c9a"
+description = "automation specialist creating workflows"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Data I/O"
+primitive_skills = ["Template-based text generation", "Resampling and gap-filling", "Multi-stage pipeline orchestration", "Constraint-based data validation", "Summary statistics and aggregation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "automation specialist creating workflows"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000789_3d479c9a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

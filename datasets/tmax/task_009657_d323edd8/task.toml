@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009657_d323edd8"
+description = "data analyst processing CSV files"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Manipulation"
+primitive_skills = ["Unicode and multi-language text processing", "Multi-stage pipeline orchestration", "Windowed and rolling aggregation", "Pipeline logging and monitoring", "Data masking and anonymization"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "data analyst processing CSV files"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009657_d323edd8"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

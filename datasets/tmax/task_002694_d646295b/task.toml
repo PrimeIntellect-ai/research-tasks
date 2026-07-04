@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002694_d646295b"
+description = "researcher organizing datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Navigation"
+primitive_skills = ["Text transformation with sed/awk/vim", "Compressed stream processing", "Atomic writes and temp file management", "Metadata-based file search"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "researcher organizing datasets"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002694_d646295b"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

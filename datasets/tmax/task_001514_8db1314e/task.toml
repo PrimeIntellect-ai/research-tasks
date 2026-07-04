@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001514_8db1314e"
+description = "engineer investigating a memory leak in a long-running service"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Debugging"
+primitive_skills = ["Logging and traceback analysis", "Fuzz testing", "Memory dump analysis and string extraction", "Loop termination and recursion fixing"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "engineer investigating a memory leak in a long-running service"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001514_8db1314e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

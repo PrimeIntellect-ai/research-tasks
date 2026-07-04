@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003318_39c17430"
+description = "DevOps engineer debugging logs"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Mathematical"
+primitive_skills = ["Logging and traceback analysis", "Boundary condition and off-by-one repair", "Deleted file recovery and filesystem inspection", "Formula implementation correction"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "DevOps engineer debugging logs"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003318_39c17430"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

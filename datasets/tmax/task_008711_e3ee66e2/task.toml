@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008711_e3ee66e2"
+description = "compliance analyst generating audit trails"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Testing"
+primitive_skills = ["Encryption and decryption", "File integrity verification", "Password cracking and brute-force search"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "compliance analyst generating audit trails"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008711_e3ee66e2"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

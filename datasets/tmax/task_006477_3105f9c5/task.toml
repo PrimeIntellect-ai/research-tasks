@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006477_3105f9c5"
+description = "researcher running simulations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Data Processing"
+primitive_skills = ["Linear and nonlinear equation solving", "Multi-dimensional array manipulation", "ODE/PDE numerical solving"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "researcher running simulations"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006477_3105f9c5"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

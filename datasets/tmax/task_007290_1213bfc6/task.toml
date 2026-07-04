@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007290_1213bfc6"
+description = "developer inheriting an unfamiliar codebase"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Data Processing"
+primitive_skills = ["Intermediate state tracing", "Encoding and serialization troubleshooting", "Binary reverse engineering and decompilation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "developer inheriting an unfamiliar codebase"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007290_1213bfc6"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

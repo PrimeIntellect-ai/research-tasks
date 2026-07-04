@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009744_b6328869"
+description = "automation specialist creating workflows"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Time Series"
+primitive_skills = ["Unicode and multi-language text processing", "Structured information extraction from text", "Timestamp alignment and parsing", "Data sampling and stratification"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "automation specialist creating workflows"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009744_b6328869"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

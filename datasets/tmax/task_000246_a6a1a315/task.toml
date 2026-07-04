@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000246_a6a1a315"
+description = "network engineer inspecting traffic"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Data Processing"
+primitive_skills = ["Content security policy enforcement", "HTTP header and cookie inspection", "Sensitive data redaction", "Reverse engineering and disassembly"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "network engineer inspecting traffic"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000246_a6a1a315"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007406_549c06f9"
+description = "network engineer inspecting traffic"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Algorithmic"
+primitive_skills = ["Privilege escalation auditing", "Pattern matching for intrusion detection", "Encryption and decryption", "File permission and access control", "File integrity verification"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "network engineer inspecting traffic"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007406_549c06f9"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

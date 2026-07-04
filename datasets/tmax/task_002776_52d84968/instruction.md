@@ -1,0 +1,11 @@
+You are a mobile build engineer maintaining our CI/CD pipelines. We have a legacy binary `/app/legacy_asset_encoder` that encrypts assets for our mobile application, but it is slow and lacks integration with our build metrics system. We need you to write a modern C++ replacement.
+
+Here are your objectives:
+1. **Analyze Specifications**: There is an image artifact from the original design documentation at `/app/pipeline_specs.png`. Use OCR (e.g., `tesseract`) or vision tools to read the magic header bytes and the bitwise manipulation rules applied to the asset payloads. You can also analyze `/app/legacy_asset_encoder` using assembly-level analysis (e.g., `objdump`) to confirm its exact behavior.
+2. **Implement C++ Encoder**: Write a C++ program at `/home/user/encoder.cpp` and compile it to `/home/user/encoder`. 
+   - It must read raw binary data from standard input (`stdin`) and write the transformed binary data to standard output (`stdout`).
+   - It must perfectly replicate the behavior of `/app/legacy_asset_encoder`.
+3. **WebSocket Integration**: If the environment variable `WS_PORT` is set, your C++ program must briefly open a WebSocket connection to `ws://127.0.0.1:$WS_PORT` and send the text message `BUILD_START` before it begins processing the `stdin` stream. If the variable is not set, skip this step. Do not write any WebSocket logs to `stdout`, as it will corrupt the binary output stream.
+4. **Property-based Testing**: Write a standalone C++ test script `/home/user/prop_test.cpp` that implements a property-based test. It should generate 100 random byte strings, feed them to both your C++ implementation's core encoding function and an inline-assembly minimal version of the encoding logic, and assert they match. Output the test result summary to `/home/user/test_results.log`.
+
+Ensure `/home/user/encoder` is statically or dynamically linked correctly and executable. Automated fuzzing will compare your `/home/user/encoder` strictly against the oracle `/app/legacy_asset_encoder` using raw `stdin` to `stdout` streams (with `WS_PORT` unset).

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001785_37d6b425"
+description = "security auditor checking permissions"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Web Security"
+primitive_skills = ["Cryptanalysis (differential, linear)", "Sensitive data redaction", "Cryptographic hashing and checksum verification", "Content security policy enforcement", "Exploit crafting and payload delivery"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "security auditor checking permissions"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001785_37d6b425"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

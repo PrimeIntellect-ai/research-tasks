@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008030_9a77dab8"
+description = "data scientist cleaning datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Testing"
+primitive_skills = ["Tabular data transformation and aggregation", "Inference performance benchmarking", "Linear algebra for data analysis"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "data scientist cleaning datasets"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008030_9a77dab8"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

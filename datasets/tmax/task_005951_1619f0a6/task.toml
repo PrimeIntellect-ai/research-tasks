@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005951_1619f0a6"
+description = "monitoring specialist setting up alerts"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Filesystem"
+primitive_skills = ["Scheduled task configuration (cron, timers)", "Email and mailing list server configuration", "Environment variable and shell profile setup", "Idempotent configuration scripting", "Expect scripting for interactive automation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "monitoring specialist setting up alerts"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005951_1619f0a6"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005727_82750cae"
+description = "developer organizing project files"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Web Security"
+primitive_skills = ["CI/CD pipeline setup", "C/C++ memory safety and undefined behaviour repair", "Assembly-level analysis and minimal program construction", "Expression parsing and evaluation"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "developer organizing project files"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005727_82750cae"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

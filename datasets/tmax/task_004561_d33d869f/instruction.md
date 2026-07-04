@@ -1,0 +1,9 @@
+You are a systems engineer investigating a background data processing service written in Bash. The service reads numerical queries from a SQLite database, performs calculations, and updates the database with the results. Recently, the service has been experiencing severe memory leaks when running for extended periods, and users have reported incorrect results for certain queries due to precision loss.
+
+Your objectives:
+1. **Identify the Memory Leak**: The service script is located at `/home/user/service.sh`. A script to generate test data is located at `/home/user/fuzzer.sh`. Run the service in the background and use the fuzzer to populate the database (`/home/user/data.db`) and accelerate the memory leak. Perform intermediate state tracing or generate a memory dump of the running bash process to analyze the extracted strings. Identify the exact name of the Bash variable (e.g., an array or string) that is continuously growing and causing the memory leak.
+2. **Track Precision Loss**: The service uses Bash's built-in arithmetic, which only supports integer math. Inspect the first few queries that were originally present in `/home/user/data.db` (before you ran the fuzzer). Find the `id` of the query where the true mathematical division of `value` by `divisor` yields a fractional number between `0.1` and `0.9`, but the service incorrectly recorded a `result` of `0` in the database.
+
+Once you have identified the issues, create a file named `/home/user/report.txt` with exactly two lines:
+- **Line 1**: The exact name of the leaking variable in `service.sh`.
+- **Line 2**: The integer `id` of the initial query that suffered from the specified precision loss.

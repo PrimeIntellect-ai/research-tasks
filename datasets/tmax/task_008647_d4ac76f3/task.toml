@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008647_d4ac76f3"
+description = "developer inheriting an unfamiliar codebase"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Forensics"
+primitive_skills = ["Dependency conflict resolution", "Intermittent failure reproduction", "Assertion-based intermediate validation", "Loop termination and recursion fixing", "Delta debugging and test minimization"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "developer inheriting an unfamiliar codebase"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008647_d4ac76f3"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

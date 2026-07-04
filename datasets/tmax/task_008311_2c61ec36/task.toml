@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008311_2c61ec36"
+description = "script developer creating utilities"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Algorithmic"
+primitive_skills = ["Expression parsing and evaluation", "Unit and integration testing", "Polyglot build orchestration (multiple compiled languages)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "script developer creating utilities"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008311_2c61ec36"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

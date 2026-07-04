@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009567_44565e9e"
+description = "site administrator managing user accounts"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Network"
+primitive_skills = ["Health check and monitoring setup", "System config file management", "Container lifecycle management", "Log configuration and rotation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "site administrator managing user accounts"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009567_44565e9e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

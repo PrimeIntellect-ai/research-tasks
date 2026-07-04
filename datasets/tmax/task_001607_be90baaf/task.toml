@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001607_be90baaf"
+description = "machine learning engineer preparing training data"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "scientific_computing"
+skill_type = "Data Processing"
+primitive_skills = ["Analytical solution validation", "Graph algorithms for molecular/network models", "Multi-dimensional array manipulation", "Numerical stability testing", "Scientific environment management"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "machine learning engineer preparing training data"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001607_be90baaf"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

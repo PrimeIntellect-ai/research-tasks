@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003783_9152893f"
+description = "site reliability engineer monitoring uptime"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Mathematical"
+primitive_skills = ["Fuzz testing", "Container debugging and log inspection", "Format parsing edge-case repair", "Precision loss tracking"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "site reliability engineer monitoring uptime"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003783_9152893f"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

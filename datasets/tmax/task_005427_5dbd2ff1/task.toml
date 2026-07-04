@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005427_5dbd2ff1"
+description = "forensics analyst recovering evidence from a compromised host"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Web Security"
+primitive_skills = ["File permission and access control", "Certificate chain validation", "Automated vulnerability scanning", "Password cracking and brute-force search"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "forensics analyst recovering evidence from a compromised host"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005427_5dbd2ff1"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

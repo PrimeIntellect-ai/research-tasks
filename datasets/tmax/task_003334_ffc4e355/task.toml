@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003334_ffc4e355"
+description = "localization engineer updating translations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Mathematical"
+primitive_skills = ["Feature extraction transforms", "Database bulk import/export", "Unicode and multi-language text processing", "Wide-long format reshaping", "Summary statistics and aggregation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "localization engineer updating translations"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003334_ffc4e355"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

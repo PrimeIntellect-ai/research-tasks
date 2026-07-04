@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004732_35496948"
+description = "configuration manager tracking changes"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_processing"
+skill_type = "String/Text"
+primitive_skills = ["Pipeline DAG orchestration", "Feature extraction transforms", "Large-scale sorting and grouping", "Timestamp alignment and parsing", "Constraint-based data validation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "configuration manager tracking changes"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004732_35496948"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

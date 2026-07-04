@@ -1,0 +1,11 @@
+You are an application performance engineer. A custom data aggregation system written in Bash is failing to process logs correctly. You need to debug and fix the system.
+
+Here is the situation:
+1. **System Call Tracing**: The data collector process crashed previously. Its `strace` output was saved to `/home/user/trace.log`. Analyze this trace to find the exact absolute path of the configuration file it attempted to open (resulting in an `ENOENT` error) just before exiting. Create this missing configuration file and add exactly the line `ENABLE_PROFILING=true` to it.
+2. **Format Parsing (Spaces in Filenames)**: The main script `/home/user/aggregate.sh` attempts to process all `.log` files in `/home/user/data/`. However, it breaks because the log files contain spaces in their names. Fix `aggregate.sh` so it safely and correctly iterates over and reads these files.
+3. **Database Recovery (WAL)**: The system reads a Write-Ahead Log at `/home/user/data/wal.txt` for recent, unarchived metrics. The WAL was corrupted during the crash and contains a partial (uncommitted) transaction at the end. Modify `aggregate.sh` (or the WAL file directly) so that only metrics from `COMMIT`ted transactions are included in the totals. Uncommitted transactions must be ignored.
+4. **Formula Correction**: The script attempts to calculate the average latency in milliseconds. The logs record latency in *seconds*. The current formula uses standard bash arithmetic but suffers from zero-truncation (e.g., `total_latency_seconds / total_requests`) and doesn't convert to milliseconds correctly. Fix the mathematical formula in `aggregate.sh` to correctly compute the average latency in milliseconds using bash integer arithmetic (e.g., multiply before dividing).
+
+Once you have fixed the script, the WAL parsing, and created the missing config file, run `/home/user/aggregate.sh` and redirect its standard output to `/home/user/final_metric.txt`.
+
+Ensure `/home/user/final_metric.txt` contains only the final computed average latency in milliseconds (a single integer).

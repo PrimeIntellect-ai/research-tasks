@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004003_6ddb88c7"
+description = "observability engineer tuning dashboards"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Process/Service"
+primitive_skills = ["Task automation scripting", "Robust script writing with error handling", "Permission and ACL management", "Git server and hook configuration"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "observability engineer tuning dashboards"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004003_6ddb88c7"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

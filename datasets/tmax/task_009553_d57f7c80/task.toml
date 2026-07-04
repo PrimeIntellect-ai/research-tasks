@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009553_d57f7c80"
+description = "configuration manager tracking changes"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "File I/O"
+primitive_skills = ["Manifest and checksum generation", "Configuration file interpretation", "Incremental and differential backups", "Text and binary file reading/writing", "Standard stream redirection and piping"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "configuration manager tracking changes"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009553_d57f7c80"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

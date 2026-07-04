@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001998_b16caec8"
+description = "technical writer organizing documentation"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "file_operations"
+skill_type = "Data Parsing"
+primitive_skills = ["Manifest and checksum generation", "Standard stream redirection and piping", "File watching and change detection", "Multi-line log record parsing", "Large-scale text editing and macro application"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "technical writer organizing documentation"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001998_b16caec8"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

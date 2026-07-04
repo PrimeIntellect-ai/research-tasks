@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008657_2de28650"
+description = "developer inheriting an unfamiliar codebase"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Systems"
+primitive_skills = ["System call tracing", "Build failure diagnosis", "Convergence failure repair", "Precision loss tracking", "Compiler and linker error interpretation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "developer inheriting an unfamiliar codebase"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008657_2de28650"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

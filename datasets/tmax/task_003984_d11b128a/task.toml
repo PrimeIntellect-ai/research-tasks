@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003984_d11b128a"
+description = "backup administrator archiving data"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "file_operations"
+skill_type = "Archives"
+primitive_skills = ["Structured format parsing (JSON, XML, CSV)", "Atomic writes and temp file management", "Streaming and memory-mapped I/O", "Domain-specific format parsing (GCode, ELF, WAL)"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "backup administrator archiving data"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003984_d11b128a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

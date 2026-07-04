@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007683_705980dc"
+description = "technical writer organizing documentation"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Archives"
+primitive_skills = ["Metadata-based file search", "Large-scale text editing and macro application", "Streaming and memory-mapped I/O"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "technical writer organizing documentation"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007683_705980dc"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

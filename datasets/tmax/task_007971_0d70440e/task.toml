@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007971_0d70440e"
+description = "database reliability engineer managing backups"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Result Processing"
+primitive_skills = ["Output schema validation", "Query-to-pipeline chaining", "Window functions and analytical aggregation", "Graph projection and materialization"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "database reliability engineer managing backups"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007971_0d70440e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

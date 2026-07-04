@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008400_9e9629cd"
+description = "automation specialist creating workflows"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Data I/O"
+primitive_skills = ["Hash-based deduplication", "Anomaly and changepoint detection", "Feature extraction transforms"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "automation specialist creating workflows"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008400_9e9629cd"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

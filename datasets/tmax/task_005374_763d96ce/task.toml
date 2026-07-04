@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005374_763d96ce"
+description = "security engineer rotating credentials"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "security"
+skill_type = "Algorithmic"
+primitive_skills = ["Privilege escalation auditing", "Password cracking and brute-force search", "Cryptanalysis (differential, linear)", "Content security policy enforcement"]
+task_complexity = "intricate task (multi-stage workflow combining (a) environment setup or package configuration, (b) primary implementation across multiple files or languages, (c) iterative refinement against a quantitative or adversarial verifier, and (d) a final integration step. Expect 30-60 commands.)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "security engineer rotating credentials"
+language = "any (model's choice)"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005374_763d96ce"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004732_44423385"
+description = "compliance analyst generating audit trails"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Web Security"
+primitive_skills = ["Content security policy enforcement", "Pattern matching for intrusion detection", "File integrity verification", "Encryption and decryption"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "compliance analyst generating audit trails"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004732_44423385"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

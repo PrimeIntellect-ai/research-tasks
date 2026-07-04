@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009741_130d9a52"
+description = "penetration tester scanning vulnerabilities"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Systems"
+primitive_skills = ["Cryptanalysis (differential, linear)", "Cryptographic hashing and checksum verification", "Firewall and network policy configuration", "Injection and XSS vulnerability analysis", "Reverse engineering and disassembly"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "penetration tester scanning vulnerabilities"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009741_130d9a52"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

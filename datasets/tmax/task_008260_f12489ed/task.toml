@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008260_f12489ed"
+description = "IT support technician resolving tickets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Debugging"
+primitive_skills = ["Intermediate state tracing", "Convergence failure repair", "Logging and traceback analysis", "Network packet capture analysis (pcap)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "IT support technician resolving tickets"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008260_f12489ed"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

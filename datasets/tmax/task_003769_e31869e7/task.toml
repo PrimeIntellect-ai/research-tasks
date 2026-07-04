@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003769_e31869e7"
+description = "penetration tester scanning vulnerabilities"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Web Security"
+primitive_skills = ["Sensitive data redaction", "File integrity verification", "Firewall and network policy configuration", "Cryptographic hashing and checksum verification", "TLS/SSL certificate management"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "penetration tester scanning vulnerabilities"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003769_e31869e7"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

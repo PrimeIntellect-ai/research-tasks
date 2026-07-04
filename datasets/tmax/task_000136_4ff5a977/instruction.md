@@ -1,0 +1,10 @@
+You are an engineer tasked with diagnosing and fixing a custom deployment service that is failing to start. The service is a Python-based HTTP server managed by a shell script, and it performs a rolling deployment before starting.
+
+Here is what you need to do:
+1. **Fix the Environment**: The daemon expects the environment variable `DEPLOY_ENVIRONMENT` to be set to `production`. Ensure this is exported correctly in `/home/user/.bash_profile`.
+2. **Storage Issue**: The service writes to a dedicated mount point at `/home/user/deploy_data`. The startup script `/home/user/start_daemon.sh` currently crashes because the disk is completely full. You need to free up space by identifying and deleting obsolete log files in `/home/user/deploy_data/logs/` (delete anything older than 30 days or specifically named `old_log_*.txt` depending on what you find).
+3. **Audio Configuration**: The configuration for the service's port and authentication token is provided in an audio file located at `/app/config.wav`. You must transcribe this audio file (you may install and use tools like `ffmpeg`, `whisper`, or any Python speech recognition libraries available in the environment). The audio contains spoken instructions specifying the port number and the required bearer token.
+4. **Fix the Deployment Script**: The deployment is handled by `/home/user/server.py`. It has a bug in its rolling deployment logic causing it to crash or serve the wrong version. Fix the Python script so that when it runs, it successfully transitions to `v2` and serves `{"version": "v2"}` on the `GET /version` endpoint.
+5. **Start the Service**: Run `/home/user/start_daemon.sh`. The service must run in the background, bind to the port specified in the audio file, and require an `Authorization: Bearer <token>` header (where `<token>` is the token from the audio) for the `GET /version` endpoint. If the token is missing or incorrect, it should return a 401 Unauthorized status.
+
+Ensure the service remains running and accessible at the transcribed port and responds correctly to the HTTP requests.

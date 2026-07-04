@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002495_2ddb227c"
+description = "release manager preparing deployments"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Multi-Language"
+primitive_skills = ["Structured data parsing and transformation", "Expression parsing and evaluation", "Test fixture and mock setup", "C program compilation, debugging, and Makefile repair", "Custom data structure design"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "release manager preparing deployments"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002495_2ddb227c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

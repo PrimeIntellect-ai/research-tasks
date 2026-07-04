@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001110_bc945260"
+description = "backup operator testing restores"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Process/Service"
+primitive_skills = ["Web server setup and TLS configuration", "User account and group administration", "Process monitoring and control", "System config file management"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "backup operator testing restores"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001110_bc945260"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004020_aebf950c"
+description = "artifact manager curating binary repositories"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Navigation"
+primitive_skills = ["Symbolic and hard link management", "Archive creation and extraction", "Multi-line log record parsing", "Atomic writes and temp file management", "Domain-specific format parsing (GCode, ELF, WAL)"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "artifact manager curating binary repositories"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004020_aebf950c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

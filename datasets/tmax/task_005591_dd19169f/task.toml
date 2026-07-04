@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005591_dd19169f"
+description = "developer organizing project files"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Navigation"
+primitive_skills = ["Multi-line log record parsing", "Symbolic and hard link management", "Streaming and memory-mapped I/O"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "developer organizing project files"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005591_dd19169f"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

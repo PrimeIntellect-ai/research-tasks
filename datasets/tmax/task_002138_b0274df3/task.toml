@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002138_b0274df3"
+description = "data scientist fitting models"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Mathematical"
+primitive_skills = ["Multi-dimensional array manipulation", "Linear and nonlinear equation solving", "ODE/PDE numerical solving", "Experimental data visualization"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "data scientist fitting models"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002138_b0274df3"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

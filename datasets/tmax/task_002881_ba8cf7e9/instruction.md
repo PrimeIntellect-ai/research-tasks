@@ -1,0 +1,8 @@
+You are a security researcher analyzing a suspicious multithreaded Python program that was running on a compromised machine. The original source file was deleted, but we managed to capture a memory dump of the system. We suspect the program frequently deadlocks under high contention, which might be why the attackers abandoned it.
+
+Your task consists of three parts:
+1. **Recovery**: Extract the deleted Python source code from the memory dump located at `/home/user/evidence/mem_dump.bin`. The script is stored in plain text and is enclosed strictly between the markers `### SCRIPT_START` and `### SCRIPT_END`. Save the extracted code exactly as it is to `/home/user/recovered/suspicious.py`.
+2. **Analysis and Fix**: Analyze the extracted `suspicious.py` to find the root cause of the deadlock (a lock acquisition order mismatch). Fix the code in `suspicious.py` by ensuring locks are always acquired in a consistent order (specifically, always acquire `conn_lock` before `state_lock`). Do not change the simulated workload or the number of threads.
+3. **Regression Testing**: Write a regression test using `pytest` and save it as `/home/user/recovered/test_suspicious.py`. The test must import the `run` function from `suspicious.py` and execute it. To ensure it catches deadlocks, configure the test to fail if it takes longer than 5 seconds (you can use `pytest-timeout`, which is already installed). 
+
+Ensure that running `pytest /home/user/recovered/test_suspicious.py` completes successfully and proves that the deadlock is resolved.

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001319_b4e42b17"
+description = "data scientist fitting models"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Data Processing"
+primitive_skills = ["Mesh refinement and domain decomposition", "Statistical hypothesis comparison", "Multi-dimensional array manipulation", "Scientific data format I/O (NetCDF, HDF5, FITS)", "Optimization (gradient descent, simplex, genetic)"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "data scientist fitting models"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001319_b4e42b17"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

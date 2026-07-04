@@ -1,0 +1,9 @@
+You are a site administrator for a small community platform. You manage user accounts and system services. Currently, your platform's backend is down, and you have pending user account requests left via a voicemail system.
+
+Your objectives:
+1. **Process the Voicemail**: There is an audio file located at `/app/voicemail.wav`. You must transcribe this audio file to find out the username and the secret passphrase the user requested for their new account.
+2. **Fix the Web Server**: You have an Nginx configuration file at `/home/user/nginx.conf` and a backend bash script at `/home/user/backend.sh`. Currently, requests to `http://127.0.0.1:8080/` return a 502 Bad Gateway error due to a socket path mismatch between Nginx and the backend script. Identify and fix the socket path issue, then start both Nginx (using the local config) and the backend service.
+3. **Configure the Account**: Modify the backend script so that an HTTP GET request to `http://127.0.0.1:8080/profile/<username>` (using the username extracted from the audio) returns an HTTP 200 OK response with the exact text `User: <username>, Secret: <passphrase>`.
+4. **Setup the Mail Relay Daemon**: Write a simple bash-based SMTP listener on `127.0.0.1:8025` and run it in the background. It must accept standard SMTP commands (HELO, MAIL FROM, RCPT TO, DATA, QUIT) and append any received message bodies to `/home/user/mail.log`. You must send an initial welcome email to `<username>@localhost` via this local SMTP service to verify it works.
+
+Ensure all services are running and bound to the correct local ports. You may use standard tools (like `ffmpeg`, `whisper.cpp` if installed, or any Python audio libraries available in the environment) to transcribe the audio.

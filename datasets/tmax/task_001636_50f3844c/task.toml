@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001636_50f3844c"
+description = "researcher organizing datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Mathematical"
+primitive_skills = ["Analysis environment setup", "Numerical accuracy testing", "Embedding computation and retrieval", "Pipeline reproducibility testing", "Package and dependency installation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "researcher organizing datasets"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001636_50f3844c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007837_4df5be40"
+description = "IT support technician resolving tickets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Systems"
+primitive_skills = ["Git bisection for regression finding", "Race condition and concurrency debugging", "Log timeline reconstruction across services", "Fuzz testing", "Binary reverse engineering and decompilation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "IT support technician resolving tickets"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007837_4df5be40"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

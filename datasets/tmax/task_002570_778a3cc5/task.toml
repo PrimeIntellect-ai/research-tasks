@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002570_778a3cc5"
+description = "release manager preparing deployments"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "software_engineering"
+skill_type = "Algorithmic"
+primitive_skills = ["Numerical algorithm implementation", "Code translation between languages", "C program compilation, debugging, and Makefile repair", "Memory debugging and profiling", "Polyglot build orchestration (multiple compiled languages)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "release manager preparing deployments"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002570_778a3cc5"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

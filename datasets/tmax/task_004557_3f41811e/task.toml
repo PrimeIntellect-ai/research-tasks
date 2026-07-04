@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004557_3f41811e"
+description = "automation specialist creating workflows"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_processing"
+skill_type = "Time Series"
+primitive_skills = ["Database bulk import/export", "Windowed and rolling aggregation", "Multi-format file reading and writing", "Character encoding handling"]
+task_complexity = "intricate task (multi-stage workflow combining (a) environment setup or package configuration, (b) primary implementation across multiple files or languages, (c) iterative refinement against a quantitative or adversarial verifier, and (d) a final integration step. Expect 30-60 commands.)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "automation specialist creating workflows"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004557_3f41811e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

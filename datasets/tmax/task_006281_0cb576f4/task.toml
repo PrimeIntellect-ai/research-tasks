@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006281_0cb576f4"
+description = "incident responder investigating issues"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Algorithmic"
+primitive_skills = ["Certificate chain validation", "Privilege escalation auditing", "Sensitive data redaction", "File permission and access control", "Automated vulnerability scanning"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "incident responder investigating issues"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006281_0cb576f4"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

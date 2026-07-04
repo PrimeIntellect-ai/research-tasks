@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004534_996875eb"
+description = "developer debugging a failing build"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Debugging"
+primitive_skills = ["Network packet capture analysis (pcap)", "Interactive debugger usage (breakpoints, memory inspection)", "Database recovery from corrupted files (WAL, journal)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "developer debugging a failing build"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004534_996875eb"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

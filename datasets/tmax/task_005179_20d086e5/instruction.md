@@ -1,0 +1,9 @@
+Hello, we have a critical Nginx server acting as a reverse proxy for our backend C++ processing service. Currently, the Nginx server is returning a 502 Bad Gateway error when users try to access it on port 8080. 
+
+Here is what you need to do to fix the system:
+1. **Audio Extraction**: The original admin left a voice memo at `/app/voice_memo.wav` detailing the correct internal backend port and the required firewall port forwarding rules. You will need to transcribe this audio file to find the correct port number and update the Nginx configuration at `/etc/nginx/sites-available/default` to proxy requests to this port. Restart Nginx once updated.
+2. **C++ Backend Service**: The backend service source code is located at `/home/user/backend/server.cpp`. It is a simple HTTP server, but it currently lacks input validation, causing it to crash and Nginx to return 502. You must modify `server.cpp` to implement a strict request payload filter. 
+3. **Adversarial Filter**: We have an adversarial testing corpus. Your updated C++ backend must serve as a classifier. It must accept (HTTP 200 OK) all JSON payloads found in the directory `/app/corpus/clean/` and reject (HTTP 403 Forbidden) all payloads found in the directory `/app/corpus/evil/`. The filter should block payloads containing specific malicious shell metacharacters or SQL injection signatures. Compile your backend and set it up as a systemd user service named `backend.service` that automatically restarts on failure.
+4. **Firewall**: Configure `ufw` or `iptables` to block external access to the backend port directly, only allowing Nginx (localhost) to communicate with it, while keeping Nginx's port 8080 open.
+
+Ensure that the Nginx service and the `backend.service` are both running and that Nginx successfully proxies requests to the backend without returning a 502. The backend must perfectly classify the corpora.

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003434_367c4e92"
+description = "automation specialist creating workflows"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Mathematical"
+primitive_skills = ["Data sampling and stratification", "Pipeline scheduling and cron management", "Resampling and gap-filling", "Data masking and anonymization"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "automation specialist creating workflows"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003434_367c4e92"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

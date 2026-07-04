@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006034_c90af39c"
+description = "infrastructure engineer automating provisioning"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Configuration"
+primitive_skills = ["Mount and fstab configuration", "Link and directory structure management", "Process supervision and restart policies"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "infrastructure engineer automating provisioning"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006034_c90af39c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

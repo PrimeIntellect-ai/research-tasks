@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004331_14f45e93"
+description = "linux systems engineer hardening configurations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Process/Service"
+primitive_skills = ["Process monitoring and control", "Log configuration and rotation", "Virtualization and VM management (QEMU, VNC)", "Scheduled task configuration (cron, timers)", "Mount and fstab configuration"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "linux systems engineer hardening configurations"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004331_14f45e93"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

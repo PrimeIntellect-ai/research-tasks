@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007578_06bc740f"
+description = "site reliability engineer monitoring uptime"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Debugging"
+primitive_skills = ["System call tracing", "Intermittent failure reproduction", "Container debugging and log inspection", "Logging and traceback analysis", "Log timeline reconstruction across services"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "site reliability engineer monitoring uptime"
+language = "multi-language"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007578_06bc740f"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

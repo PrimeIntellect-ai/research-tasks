@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000921_f7392e0b"
+description = "platform engineer maintaining CI/CD pipelines"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Mathematical"
+primitive_skills = ["FFI and cross-language interop (C bindings, ctypes, cgo)", "Numerical algorithm implementation", "Interpreter and emulator implementation", "Property-based testing", "C program compilation, debugging, and Makefile repair"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "platform engineer maintaining CI/CD pipelines"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000921_f7392e0b"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

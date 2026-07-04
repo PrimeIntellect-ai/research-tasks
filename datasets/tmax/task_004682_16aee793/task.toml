@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004682_16aee793"
+description = "data scientist fitting models"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Data Processing"
+primitive_skills = ["Fourier transforms and spectral analysis", "Scientific environment management", "Experimental data visualization", "Scientific data format I/O (NetCDF, HDF5, FITS)", "Convergence testing"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "data scientist fitting models"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004682_16aee793"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

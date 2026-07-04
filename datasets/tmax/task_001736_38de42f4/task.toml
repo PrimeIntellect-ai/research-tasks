@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001736_38de42f4"
+description = "open-source maintainer reviewing a broken PR"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Testing"
+primitive_skills = ["CI/CD pipeline setup", "Assembly-level analysis and minimal program construction", "Schema migration", "End-to-end test orchestration", "Package and dependency management"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "open-source maintainer reviewing a broken PR"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001736_38de42f4"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

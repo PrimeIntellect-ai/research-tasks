@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001597_03d2cbde"
+description = "database administrator optimizing queries"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Query Construction"
+primitive_skills = ["Result sorting, pagination, and filtering", "Parameterized query construction", "Query result export and format conversion", "Query plan interpretation and optimization", "Window functions and analytical aggregation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "database administrator optimizing queries"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001597_03d2cbde"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

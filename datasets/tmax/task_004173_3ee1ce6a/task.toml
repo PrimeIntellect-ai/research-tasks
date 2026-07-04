@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004173_3ee1ce6a"
+description = "cloud architect migrating services"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Shell Scripting"
+primitive_skills = ["Connectivity diagnostics", "System config file management", "CI/CD pipeline construction", "Idempotent configuration scripting"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "cloud architect migrating services"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004173_3ee1ce6a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

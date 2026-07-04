@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008737_fe644c56"
+description = "site reliability engineer monitoring uptime"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Algorithmic"
+primitive_skills = ["Memory dump analysis and string extraction", "Floating-point precision repair", "Regression test construction", "Intermediate state tracing", "Data transformation diff analysis"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "site reliability engineer monitoring uptime"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008737_fe644c56"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

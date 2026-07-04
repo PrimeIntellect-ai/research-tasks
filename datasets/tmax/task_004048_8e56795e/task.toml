@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004048_8e56795e"
+description = "machine learning engineer preparing training data"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Mathematical"
+primitive_skills = ["Tabular data transformation and aggregation", "Hypothesis testing and confidence intervals", "Model output validation", "Bayesian inference and probabilistic modeling", "Large-scale data storage management"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "machine learning engineer preparing training data"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004048_8e56795e"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001186_8a4a7f0d"
+description = "platform engineer maintaining CI/CD pipelines"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "software_engineering"
+skill_type = "Data Processing"
+primitive_skills = ["Character and data encoding", "Numerical algorithm implementation", "Diff and patch processing", "Memory debugging and profiling"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "platform engineer maintaining CI/CD pipelines"
+language = "any (model's choice)"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001186_8a4a7f0d"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

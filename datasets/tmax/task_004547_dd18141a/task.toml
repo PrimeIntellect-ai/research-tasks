@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004547_dd18141a"
+description = "database reliability engineer managing backups"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Data Comprehension"
+primitive_skills = ["Graph traversal and shortest path computation", "Index strategy design", "Window functions and analytical aggregation", "NoSQL aggregation pipelines", "Cross-representation mapping (relational, document, graph)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "database reliability engineer managing backups"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004547_dd18141a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

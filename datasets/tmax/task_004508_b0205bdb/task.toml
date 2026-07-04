@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004508_b0205bdb"
+description = "script developer creating utilities"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Systems"
+primitive_skills = ["Checksum and error-correcting codes", "Request validation and rate limiting", "Structured data parsing and transformation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "script developer creating utilities"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004508_b0205bdb"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

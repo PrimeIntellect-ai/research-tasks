@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000328_1b623ee6"
+description = "infrastructure engineer automating provisioning"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Process/Service"
+primitive_skills = ["Health check and monitoring setup", "CI/CD pipeline construction", "Permission and ACL management", "Email and mailing list server configuration"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "infrastructure engineer automating provisioning"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000328_1b623ee6"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005436_d605aece"
+description = "system administrator maintaining servers"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Configuration"
+primitive_skills = ["Web server setup and TLS configuration", "Environment variable and shell profile setup", "Reverse proxy and load balancer setup"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "system administrator maintaining servers"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005436_d605aece"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

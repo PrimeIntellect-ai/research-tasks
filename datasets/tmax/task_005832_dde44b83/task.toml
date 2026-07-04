@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005832_dde44b83"
+description = "DevOps engineer debugging logs"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Systems"
+primitive_skills = ["Memory dump analysis and string extraction", "Dependency conflict resolution", "Binary reverse engineering and decompilation", "Floating-point precision repair"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "DevOps engineer debugging logs"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005832_dde44b83"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

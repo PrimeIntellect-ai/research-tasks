@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_006752_68afdb87"
+description = "researcher organizing datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Data Comprehension"
+primitive_skills = ["Data model reverse engineering", "Cross-representation mapping (relational, document, graph)", "Knowledge graph pattern matching"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "researcher organizing datasets"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_006752_68afdb87"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

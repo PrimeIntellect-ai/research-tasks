@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000450_aa8cc05c"
+description = "engineer diagnosing why a systemd service fails to start"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Shell Scripting"
+primitive_skills = ["Disk quota and storage monitoring", "Mount and fstab configuration", "Idempotent configuration scripting"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "engineer diagnosing why a systemd service fails to start"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000450_aa8cc05c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

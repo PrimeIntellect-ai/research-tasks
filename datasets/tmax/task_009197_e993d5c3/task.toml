@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009197_e993d5c3"
+description = "DevSecOps engineer enforcing policy as code"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Testing"
+primitive_skills = ["Cryptographic hashing and checksum verification", "Firewall and network policy configuration", "File integrity verification", "Process isolation and sandboxing"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "DevSecOps engineer enforcing policy as code"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009197_e993d5c3"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

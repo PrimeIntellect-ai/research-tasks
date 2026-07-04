@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008786_3fa84ebb"
+description = "backup operator testing restores"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Network"
+primitive_skills = ["Container lifecycle management", "Interactive script construction", "User account and group administration", "CI/CD pipeline construction"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "backup operator testing restores"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008786_3fa84ebb"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

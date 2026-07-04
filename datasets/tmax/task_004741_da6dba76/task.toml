@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004741_da6dba76"
+description = "data engineer building ETL pipelines"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Systems"
+primitive_skills = ["Interpolation and imputation", "Time-based bucketing and aggregation", "Pipeline scheduling and cron management", "Hash-based deduplication", "Database bulk import/export"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "data engineer building ETL pipelines"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004741_da6dba76"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

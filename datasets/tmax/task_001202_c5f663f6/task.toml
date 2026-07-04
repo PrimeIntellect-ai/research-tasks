@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001202_c5f663f6"
+description = "artifact manager curating binary repositories"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "file_operations"
+skill_type = "File I/O"
+primitive_skills = ["Character encoding conversion", "Configuration file interpretation", "Metadata-based file search"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "artifact manager curating binary repositories"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001202_c5f663f6"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

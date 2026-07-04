@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003456_c92080dd"
+description = "deployment engineer rolling out updates"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Network"
+primitive_skills = ["Virtualization and VM management (QEMU, VNC)", "Rolling and staged deployments", "Expect scripting for interactive automation", "Link and directory structure management"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "deployment engineer rolling out updates"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003456_c92080dd"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_004664_1882a5e5"
+description = "developer fixing a multi-file Rust project that fails to compile"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Multi-Language"
+primitive_skills = ["Structured data parsing and transformation", "Schema migration", "CI/CD pipeline setup", "Semantic version comparison"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "developer fixing a multi-file Rust project that fails to compile"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_004664_1882a5e5"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

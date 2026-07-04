@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001499_5e7cb837"
+description = "automation specialist creating workflows"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "data_processing"
+skill_type = "Algorithmic"
+primitive_skills = ["Unicode and multi-language text processing", "Data masking and anonymization", "Parallel data processing", "Timestamp alignment and parsing"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "automation specialist creating workflows"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001499_5e7cb837"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

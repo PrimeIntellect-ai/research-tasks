@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005908_00c7b2e9"
+description = "storage administrator managing disk space"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "Navigation"
+primitive_skills = ["Large-scale text editing and macro application", "Archive integrity verification", "Standard stream redirection and piping"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "storage administrator managing disk space"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005908_00c7b2e9"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

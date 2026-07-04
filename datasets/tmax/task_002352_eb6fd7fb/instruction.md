@@ -1,0 +1,10 @@
+You are a support engineer tasked with fixing our internal audio diagnostics service. We recently received a corrupted diagnostic audio file (`/app/corrupt_diag.wav`) and the original source code for the processing service was lost. All we have is the compiled bytecode (`/app/diag_server.pyc`) and complaints that the server hangs indefinitely during peak load.
+
+Your objectives:
+1. **Reverse Engineer & Decompile:** Recover the source code from `/app/diag_server.pyc` (Python 3.10 compatible). You'll need to understand how the service works, its endpoints, and the required authentication tokens.
+2. **Fix Concurrency Deadlocks:** The server maintains internal counters and locks when processing audio files and serving metrics. Under high contention, a race condition causes a deadlock. Identify the lock inversion or race condition and fix it.
+3. **Corrupted Input Handling:** The service needs to transcribe `/app/corrupt_diag.wav`. This WAV file has a corrupted RIFF header (the file size fields are zeroed out or truncated). Modify the audio parsing pipeline to robustly recover and transcribe the spoken English content from the audio despite the corruption. You may install and use standard tools like `ffmpeg` or `openai-whisper` for recovery and transcription.
+4. **Intermediate Validation:** Add assertion-based validation in the audio processing function to assert that the recovered audio stream duration is strictly greater than 0 seconds before passing it to the transcription model.
+5. **Deployment:** Start your fixed HTTP server on `127.0.0.1:8000`.
+
+The automated test suite will fire concurrent requests at your server to ensure the deadlock is resolved, pass various corrupted files, and specifically ask your server to transcribe `/app/corrupt_diag.wav`. The server must correctly extract the spoken text and return it in the JSON response as defined by the original service API. Keep the server running in the background.

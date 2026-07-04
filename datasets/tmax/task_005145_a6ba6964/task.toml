@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005145_a6ba6964"
+description = "compliance analyst generating audit trails"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "security"
+skill_type = "Algorithmic"
+primitive_skills = ["File integrity verification", "Exploit crafting and payload delivery", "Firewall and network policy configuration", "Token generation and validation"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "compliance analyst generating audit trails"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005145_a6ba6964"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

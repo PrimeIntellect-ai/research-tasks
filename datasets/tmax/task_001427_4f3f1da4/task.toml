@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001427_4f3f1da4"
+description = "data analyst processing CSV files"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Data Processing"
+primitive_skills = ["Bayesian inference and probabilistic modeling", "Analysis environment setup", "Pipeline reproducibility testing", "Similarity search and recommendation", "Numerical accuracy testing"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "data analyst processing CSV files"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001427_4f3f1da4"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

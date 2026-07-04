@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_005597_47b050b8"
+description = "incident responder investigating issues"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Algorithmic"
+primitive_skills = ["Certificate chain validation", "Encryption and decryption", "HTTP header and cookie inspection", "Sensitive data redaction"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "incident responder investigating issues"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_005597_47b050b8"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

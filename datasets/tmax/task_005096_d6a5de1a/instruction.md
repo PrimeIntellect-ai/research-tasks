@@ -1,0 +1,10 @@
+I am a researcher trying to organize a messy collection of time-series datasets, but my environment is completely broken and my scripts are failing. I need your help to fix the environment, compute similarities, and cluster the datasets.
+
+Here is the situation:
+1. I have 30 time-series datasets in `/home/user/data/`. Each is a CSV containing `time` and `signal` columns. They belong to 3 distinct underlying signal families (with some noise and temporal shifting).
+2. I need to compute the pairwise Dynamic Time Warping (DTW) distances between all these datasets to cluster them. I downloaded the `fastdtw` package source to `/app/fastdtw-0.3.4`, but when I try to install it via `pip install -e .`, it fails with an import error. Please fix the package source and install it.
+3. Once `fastdtw` is installed, write a script to calculate the pairwise DTW distance matrix for all 30 datasets. (You should normalize the `signal` values to have zero mean and unit variance before computing DTW to ensure scale invariance).
+4. Use Agglomerative Clustering (with 'complete' linkage) on the distance matrix to group the datasets into exactly 3 clusters. Save the results to `/home/user/clusters.json`. The JSON should be a dictionary mapping a string cluster label (e.g., "0", "1", "2") to a list of filenames (e.g., "dataset_1.csv").
+5. I have a script at `/home/user/plot_clusters.py` that is supposed to read your distance matrix and output a dendrogram. However, because my server is headless, it currently produces blank plots or crashes with backend errors. Please fix `plot_clusters.py` so it successfully generates `dendrogram.png` in the home directory.
+
+Please execute the end-to-end workflow: fix the package, process the data, perform the similarity search and clustering, output `clusters.json`, and fix/run the plotting script.

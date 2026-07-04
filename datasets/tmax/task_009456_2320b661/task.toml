@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009456_2320b661"
+description = "localization engineer updating translations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "String/Text"
+primitive_skills = ["Large-scale sorting and grouping", "Constraint-based data validation", "Rolling statistics computation", "Database bulk import/export", "Regex pattern construction"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "localization engineer updating translations"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009456_2320b661"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

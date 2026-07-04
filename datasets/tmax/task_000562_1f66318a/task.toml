@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_000562_1f66318a"
+description = "network engineer inspecting traffic"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Testing"
+primitive_skills = ["Privilege escalation auditing", "Encryption and decryption", "File integrity verification", "Service auditing and port scanning", "SSH hardening and key management"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "network engineer inspecting traffic"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_000562_1f66318a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

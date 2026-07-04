@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009508_122c219c"
+description = "QA engineer setting up test environments"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "software_engineering"
+skill_type = "Mathematical"
+primitive_skills = ["Reverse proxy configuration", "Constraint satisfaction", "C/C++ memory safety and undefined behaviour repair", "Memory debugging and profiling"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "QA engineer setting up test environments"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009508_122c219c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

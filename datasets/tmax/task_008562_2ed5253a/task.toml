@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008562_2ed5253a"
+description = "operations engineer triaging incidents"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "debugging"
+skill_type = "Forensics"
+primitive_skills = ["Container debugging and log inspection", "Core dump and stack trace analysis", "Deleted file recovery and filesystem inspection", "Compiler and linker error interpretation", "Encoding and serialization troubleshooting"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "operations engineer triaging incidents"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008562_2ed5253a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

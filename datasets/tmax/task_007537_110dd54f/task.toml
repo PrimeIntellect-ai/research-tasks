@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_007537_110dd54f"
+description = "configuration manager tracking changes"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Time Series"
+primitive_skills = ["Windowed and rolling aggregation", "Anomaly and changepoint detection", "Tokenization and normalization", "Normalization and standardization"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "configuration manager tracking changes"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_007537_110dd54f"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

@@ -1,0 +1,8 @@
+You are acting as a red-team operator crafting an evasion payload. We have intercepted a custom, stripped payload encoder binary used by an adversary, located at `/app/obfuscator_bin`. We need to perfectly replicate its behavior to generate our own payloads that their infrastructure will accept, and audit a related deployment script.
+
+Your objectives:
+1. **Analyze the Stripped Binary:** Reverse engineer `/app/obfuscator_bin`. It takes exactly two arguments: a path to a PEM-encoded TLS certificate and a raw payload string. It outputs an encoded payload to stdout. 
+2. **Payload Encoding Recreation:** Write a Go program at `/home/user/payload_encoder.go` that perfectly replicates the encoding logic of `/app/obfuscator_bin`. Your Go program must compile to `/home/user/payload_encoder` and accept the exact same command-line arguments (certificate path and raw string) and produce the exact same standard output as the binary for any given input. 
+3. **CWE & Privilege Escalation Audit:** We found a wrapper script at `/home/user/deploy_payload.sh` that calls this binary. It is executed by a privileged user, but we suspect it is vulnerable to credential/payload leakage via `/proc` command-line arguments (CWE-214/CWE-497). Create a file at `/home/user/audit_report.txt` containing exactly the CWE ID of the vulnerability found in the script on the first line, and a one-sentence explanation of the privilege escalation / leakage vector on the second line.
+
+Ensure your Go code is highly efficient and robust, as it will be rigorously fuzzed against the original binary using thousands of random payloads and various valid TLS certificates. Build your binary using `go build -o /home/user/payload_encoder /home/user/payload_encoder.go`.

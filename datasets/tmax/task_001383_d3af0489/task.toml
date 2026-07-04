@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_001383_d3af0489"
+description = "container specialist managing microservices"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "system_administration"
+skill_type = "Network"
+primitive_skills = ["Process supervision and restart policies", "Idempotent configuration scripting", "Disk quota and storage monitoring", "Task automation scripting", "Git server and hook configuration"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "container specialist managing microservices"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_001383_d3af0489"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

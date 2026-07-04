@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008049_7ccaccdc"
+description = "researcher running simulations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Systems"
+primitive_skills = ["Scientific data format I/O (NetCDF, HDF5, FITS)", "Mesh refinement and domain decomposition", "Graph algorithms for molecular/network models", "Experimental data visualization"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "researcher running simulations"
+language = "C"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008049_7ccaccdc"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

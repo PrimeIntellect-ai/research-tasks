@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003642_70dd7bf0"
+description = "data engineer building ETL pipelines"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Time Series"
+primitive_skills = ["Rolling statistics computation", "Structured information extraction from text", "Hash-based deduplication", "Parallel data processing", "Pipeline scheduling and cron management"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "data engineer building ETL pipelines"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003642_70dd7bf0"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

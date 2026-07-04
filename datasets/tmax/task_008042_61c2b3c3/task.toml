@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008042_61c2b3c3"
+description = "forensics analyst recovering evidence from a compromised host"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "security"
+skill_type = "Testing"
+primitive_skills = ["Sensitive data redaction", "Certificate chain validation", "Authentication flow testing", "Automated vulnerability scanning", "HTTP header and cookie inspection"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "forensics analyst recovering evidence from a compromised host"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008042_61c2b3c3"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

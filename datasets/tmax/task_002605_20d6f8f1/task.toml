@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002605_20d6f8f1"
+description = "artifact manager curating binary repositories"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "file_operations"
+skill_type = "File I/O"
+primitive_skills = ["Text transformation with sed/awk/vim", "Text and binary file reading/writing", "Structured format parsing (JSON, XML, CSV)", "File watching and change detection", "Standard stream redirection and piping"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "artifact manager curating binary repositories"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002605_20d6f8f1"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

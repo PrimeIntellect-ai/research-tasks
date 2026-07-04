@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002502_6484fb7c"
+description = "capacity planner analyzing resource usage"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "system_administration"
+skill_type = "Filesystem"
+primitive_skills = ["Network interface and routing configuration", "Git server and hook configuration", "Link and directory structure management"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "capacity planner analyzing resource usage"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002502_6484fb7c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

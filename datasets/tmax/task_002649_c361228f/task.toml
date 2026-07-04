@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_002649_c361228f"
+description = "database administrator optimizing queries"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Data Comprehension"
+primitive_skills = ["Graph traversal and shortest path computation", "Cross-query aggregation and summarization", "Query-to-pipeline chaining", "Complex joins and subqueries", "Graph analytics (centrality, clustering)"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "database administrator optimizing queries"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_002649_c361228f"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

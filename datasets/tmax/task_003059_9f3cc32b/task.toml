@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003059_9f3cc32b"
+description = "security auditor checking permissions"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "security"
+skill_type = "Systems"
+primitive_skills = ["Encryption and decryption", "File permission and access control", "Injection and XSS vulnerability analysis", "Security log parsing and correlation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "security auditor checking permissions"
+language = "Bash"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003059_9f3cc32b"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

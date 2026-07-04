@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003192_a7f8441c"
+description = "DevSecOps engineer enforcing policy as code"
+
+[metadata]
+source = "v2"
+base_image = "intricate"
+domain = "security"
+skill_type = "Web Security"
+primitive_skills = ["Automated vulnerability scanning", "HTTP header and cookie inspection", "Security log parsing and correlation", "Pattern matching for intrusion detection"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "DevSecOps engineer enforcing policy as code"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003192_a7f8441c"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

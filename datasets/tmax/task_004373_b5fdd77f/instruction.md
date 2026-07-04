@@ -1,0 +1,9 @@
+You are a support engineer investigating a crashed financial modeling application written in Rust. The user reported that the application crashes with a panic, some transactions were lost, and the environment seems misconfigured.
+
+Your objectives:
+1. **Environment Misconfiguration Repair**: The Rust project is located at `/home/user/fin-model`. It currently fails to compile because of an invalid configuration in `Cargo.toml`. Identify and fix the misconfiguration so the project builds successfully with `cargo build`.
+2. **Database Recovery**: The application writes a custom journal file at `/home/user/fin-model/transactions.journal`. The file has become corrupted with binary garbage, but it still contains valid plain-text transaction entries that start with `SUCCESS:`. Extract all valid transaction lines starting with `SUCCESS:` and save them exactly as they appear into `/home/user/recovered.log`.
+3. **Precision Loss / Logic Bug Repair**: The application processes `/home/user/fin-model/inputs.csv`. It crashes due to a panic (`"Result is not finite"`) caused by a loss of precision or incorrect division logic in `src/main.rs`. Diagnose the trace, fix the math bug in `src/main.rs` so that no precision is lost (ensure floating-point division is used instead of integer division), and ensure `cargo run` successfully processes the entire `inputs.csv`.
+4. **Delta Debugging**: Identify the exact single line in `inputs.csv` that caused the panic before your fix. Copy *only* that single crashing line into `/home/user/crash.csv`.
+
+Once you have completed these steps, verify your solution by checking that `/home/user/recovered.log` contains the recovered logs, `/home/user/crash.csv` contains the exact crashing input line, and `cargo run` finishes without panicking in `/home/user/fin-model`.

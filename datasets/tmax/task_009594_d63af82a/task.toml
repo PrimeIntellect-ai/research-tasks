@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_009594_d63af82a"
+description = "data engineer building ETL pipelines"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "Mathematical"
+primitive_skills = ["Distance and similarity computation", "Large-file streaming", "Pipeline DAG orchestration", "Data sampling and stratification"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "data engineer building ETL pipelines"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_009594_d63af82a"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

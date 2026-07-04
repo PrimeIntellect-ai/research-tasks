@@ -1,0 +1,11 @@
+You are a performance engineer working on a scientific computing pipeline for a physics simulation. The lead scientist left you a voicemail with the parameters for the new reference distribution, but they are currently out of the office.
+
+Your task:
+1. Listen to or transcribe the audio file located at `/app/voicemail.wav`. It contains the mean and standard deviation for a Gaussian reference distribution.
+2. In your home directory (`/home/user`), you will find a file named `naive_w1.cpp` (you must create this based on the description below, as a starting point to optimize). This program is supposed to calculate the 1-Wasserstein distance between an empirical sample of $N$ randomly generated points (Uniformly distributed in $[0,1]$) and the Normal distribution specified in the voicemail (truncated to $[0, 1]$).
+3. The current naive approach calculates the Empirical CDF (ECDF) at $M = 1,000,000$ grid points across $[0,1]$ and compares it to the Normal CDF. For each grid point, it iterates through all $N$ samples to count how many are less than the grid value, resulting in an $O(M \times N)$ time complexity. This is numerically stable but terribly slow.
+4. Write an optimized C++ program named `/home/user/optimized_w1.cpp`. It must compute the exact same mathematical ECDF to Normal CDF Riemann sum distance on the same $M=1,000,000$ grid points, but in a significantly faster way (e.g., by sorting the samples first to compute the ECDF in $O(N \log N + M)$ time).
+5. Your optimized program must take exactly three command-line arguments: `<N_samples> <mean> <stddev>`. It should use `std::mt19937` with a fixed seed of `42` to generate the Uniform samples in $[0,1]$. It must print ONLY the final 1-Wasserstein distance to standard output, with 6 decimal places.
+6. Make sure your C++ environment is properly set up. You can install any required packages (like `build-essential`). 
+
+Your final code will be compiled with `g++ -O3 /home/user/optimized_w1.cpp -o /home/user/optimized_w1`. The automated test will measure the execution time for $N=50,000$ samples and calculate the speedup compared to the $O(M \times N)$ naive method. You must achieve a speedup of at least 50x while keeping the numerical error within `1e-5` of the naive method's output.

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008326_4771d9a1"
+description = "compliance officer auditing systems"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_querying"
+skill_type = "Query Construction"
+primitive_skills = ["Recursive and hierarchical queries", "Cross-query aggregation and summarization", "Cross-representation mapping (relational, document, graph)", "Result sorting, pagination, and filtering", "Index strategy design"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash, code, and system services (shell commands, scripts, package installation, service configuration, networking, and containers)"
+scenario = "compliance officer auditing systems"
+language = "Rust"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008326_4771d9a1"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

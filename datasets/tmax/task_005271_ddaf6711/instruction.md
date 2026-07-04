@@ -1,0 +1,9 @@
+You are acting as a compliance analyst tasked with restoring and securing our audit trail generation system. Our previous proprietary audit token generator was lost, leaving only a stripped compiled binary `/app/reference_oracle/audit_tokenizer`. We need a bit-exact C++ replacement to ensure continuity.
+
+Additionally, you need to configure the supporting infrastructure for our secure audit logging pipeline:
+1. **Token Generator Development**: Write a C++ program at `/home/user/workspace/audit_tokenizer.cpp` and compile it to `/home/user/workspace/audit_tokenizer`. This program must take a single string argument (the log event) and output a cryptographic token. You must reverse-engineer the logic of the provided `/app/reference_oracle/audit_tokenizer` by observing its input/output pairs and replicate it exactly.
+2. **Web Security (CSP)**: Configure the Nginx server acting as our audit dashboard frontend. Modify its configuration at `/home/user/nginx/nginx.conf` to enforce a strict Content Security Policy (CSP). The CSP must strictly allow scripts only from `self` and `https://trusted.cdn.com`, and disable inline scripts and evals. Nginx is listening on port 8080.
+3. **SSH Hardening**: Secure the SSH daemon configuration at `/home/user/ssh/sshd_config` (which runs on port 2222 for log transport). You must disable password authentication, disable root login, and enforce the use of `ed25519` keys only. Generate a valid ed25519 key pair for the `audit_user` at `/home/user/.ssh/id_ed25519_audit`.
+4. **Integration**: Create a bash script `/home/user/workspace/run_audit.sh` that takes a log string, uses your C++ token generator to create the token, and formats an audit log entry as `[TOKEN] - LOG_STRING`, appending it to `/home/user/workspace/audit.log`.
+
+Ensure all services (Nginx on 8080, SSH on 2222) can be started using the provided `start_services.sh` script in `/app/`.

@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008761_fb4cfc67"
+description = "data analyst processing CSV files"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_processing"
+skill_type = "String/Text"
+primitive_skills = ["Interpolation and imputation", "Structured information extraction from text", "Template-based text generation", "Large-file streaming"]
+task_complexity = "short task (a few shell commands focused on the core task)"
+command_complexity = "bash-only (shell built-ins, coreutils, and standard CLI tools)"
+scenario = "data analyst processing CSV files"
+language = "Python"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008761_fb4cfc67"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

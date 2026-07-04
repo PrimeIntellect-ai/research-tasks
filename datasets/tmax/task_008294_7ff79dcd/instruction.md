@@ -1,0 +1,10 @@
+You are an engineer tasked with repairing and building a polyglot web security log analyzer from scratch. The project, located at `/home/user/analyzer`, uses a Go concurrent orchestrator and a C native extension via CGo for high-performance log parsing. 
+
+However, the current codebase has several issues preventing it from building and running correctly:
+
+1. **Package Management & Build Setup:** The Go project is missing its module definitions and dependency configurations. You need to initialize the Go module with the path `security/loganalyzer` and ensure the build system can link the CGo components correctly.
+2. **C Memory Safety Bug:** The C parser (`parser.c`) contains a buffer overflow vulnerability that causes a segmentation fault when processing malicious HTTP requests with extremely long URIs. You must modify `parser.c` to repair this undefined behavior and memory safety issue.
+3. **Go Concurrency Bug:** The Go orchestrator (`main.go`) processes log lines concurrently but has a data race condition where multiple goroutines append to a shared slice without synchronization, causing panics or data loss. You must fix this by implementing proper Go concurrency patterns (e.g., channels or mutexes).
+4. **Execution and Sorting:** Once built successfully without errors or segfaults, run the analyzer on `/home/user/analyzer/requests.log`. The program will output flagged malicious URIs. You must collect all outputs, sort them alphabetically, remove duplicates, and write the final output to `/home/user/analyzer/alerts_sorted.txt`.
+
+The project files are already placed in `/home/user/analyzer`. Do not use root/sudo. Your final deliverable is the successfully compiled Go binary at `/home/user/analyzer/loganalyzer` and the correctly formatted `/home/user/analyzer/alerts_sorted.txt`.

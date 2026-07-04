@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_008115_d03608b1"
+description = "researcher running simulations"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "scientific_computing"
+skill_type = "Testing"
+primitive_skills = ["Fourier transforms and spectral analysis", "Spectroscopy and signal data processing", "Scientific code regression testing", "Scientific data format I/O (NetCDF, HDF5, FITS)"]
+task_complexity = "moderate task (several commands across setup, implementation, and verification)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "researcher running simulations"
+language = "C++"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_008115_d03608b1"
+cpus = 1
+memory_mb = 2048
+allow_internet = true

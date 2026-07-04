@@ -1,0 +1,28 @@
+schema_version = "1.1"
+
+[task]
+name = "tmax/task_003172_8e0fef7d"
+description = "data scientist cleaning datasets"
+
+[metadata]
+source = "legacy"
+base_image = ""
+domain = "data_science"
+skill_type = "Mathematical"
+primitive_skills = ["Multi-source data joining", "Model output validation", "Correlation and covariance analysis", "Package and dependency installation", "Model training and evaluation"]
+task_complexity = "complex task (many commands spanning multiple phases: dependency installation, code writing, configuration, building, and testing)"
+command_complexity = "bash and code (shell commands and writing/running scripts in Python, Perl, Ruby, etc.)"
+scenario = "data scientist cleaning datasets"
+language = "Go"
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+docker_image = "prime/primeintellect/tmax:task_003172_8e0fef7d"
+cpus = 1
+memory_mb = 2048
+allow_internet = true
