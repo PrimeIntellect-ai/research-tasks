@@ -22,7 +22,7 @@ timeout_sec = 600.0
 timeout_sec = 120.0
 
 [environment]
-docker_image = "prime/primeintellect/tmax:task_004518_dcfc0874"
+docker_image = "tmax/task_004518_dcfc0874:latest"
 cpus = 1
 memory_mb = 2048
 allow_internet = true
